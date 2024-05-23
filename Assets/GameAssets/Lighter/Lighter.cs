@@ -32,6 +32,7 @@ public class Lighter : MonoBehaviour
     }
 
     void Start() {
+        //firePrefab.transform.localScale = new Vector3(0.1f,0.1f,0.1f);
         //GameObject newObject = Instantiate(firePrefab, firePoint.position, firePoint.rotation, this.transform);
     }
 }
