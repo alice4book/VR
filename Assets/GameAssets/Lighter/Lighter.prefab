@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 554304980307649620}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.032000065, y: 0.4170012, z: 0}
+  m_LocalPosition: {x: -0.022, y: 0.553, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -361,5 +361,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f354af067205feb46b2324cf54b64422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePrefab: {fileID: 8786546081102988848, guid: 59da1b7207256f84b80a3876224b7ada, type: 3}
+  firePrefab: {fileID: 7415898492218101531, guid: 4cfe03ede3dde614480d32ae333fe545, type: 3}
   firePoint: {fileID: 4295252159391731031}
