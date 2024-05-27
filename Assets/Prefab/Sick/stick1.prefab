@@ -65,8 +65,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: duration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: _isBurning
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: endScale.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: endPosition.z
+      value: 0.0003
       objectReference: {fileID: 0}
     - target: {fileID: 4753065803983070957, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_Height
@@ -95,6 +107,10 @@ PrefabInstance:
     - target: {fileID: 7063220421966822012, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_Name
       value: Bonfire
+      objectReference: {fileID: 0}
+    - target: {fileID: 7893177707358951281, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

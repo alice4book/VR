@@ -12,7 +12,7 @@ public class Lighter : MonoBehaviour
     [Tooltip("The point that the fire is created")]
     Transform firePoint = null;
     
-    bool fireSpawned = false;
+    public bool fireSpawned = false;
     GameObject fire;
 
     private LighterAnimations animations;

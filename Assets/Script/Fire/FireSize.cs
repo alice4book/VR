@@ -67,7 +67,7 @@ public class FireSize : MonoBehaviour
 
             var shape = _alpha.shape;
             shape.scale = new Vector3(lenght_x, lenght_y, lenght_z);
-            _alpha.emissionRate = _startingEmissionRate + lenght_y * lenght_x;
+            _alpha.emissionRate = _startingEmissionRate + lenght_y * lenght_x * 3.0f;
         }
         if (_add != null)
         {
@@ -78,7 +78,7 @@ public class FireSize : MonoBehaviour
 
             var shape = _add.shape;
             shape.scale = new Vector3(lenght_x, lenght_y, lenght_z);
-            _add.emissionRate = _startingEmissionRate + lenght_y * lenght_x;
+            _add.emissionRate = _startingEmissionRate + lenght_y * lenght_x * 3.0f;
         }
         if (_glow != null)
         {
@@ -88,7 +88,45 @@ public class FireSize : MonoBehaviour
 
             var shape = _glow.shape;
             shape.scale = new Vector3(lenght_x, lenght_y, lenght_z);
-            _glow.emissionRate = _startingEmissionRate + lenght_y * lenght_x;
+            _glow.emissionRate = _startingEmissionRate + lenght_y * lenght_x * 3.0f;
+        }
+        _oldSize = size;
+    }
+
+
+    public void UpdateValues()
+    {
+        if (_alpha != null)
+        {
+            _alpha.startSize = size * _alpha.startSize / _oldSize;
+            _alpha.startLifetime = size * _alpha.startLifetime / _oldSize;
+            _alpha.startSpeed = _oldSize * _alpha.startSpeed / size;
+
+
+            var shape = _alpha.shape;
+            shape.scale = new Vector3(lenght_x, lenght_y, lenght_z);
+            _alpha.emissionRate = _startingEmissionRate + lenght_y * lenght_x * 3.0f;
+        }
+        if (_add != null)
+        {
+            _add.startSize = size * _add.startSize / _oldSize;
+            _add.startLifetime = size * _add.startLifetime / _oldSize;
+            _add.startSpeed = _oldSize * _add.startSpeed / size;
+
+
+            var shape = _add.shape;
+            shape.scale = new Vector3(lenght_x, lenght_y, lenght_z);
+            _add.emissionRate = _startingEmissionRate + lenght_y * lenght_x * 3.0f;
+        }
+        if (_glow != null)
+        {
+            _glow.startSize = size * _glow.startSize / _oldSize;
+            _glow.startLifetime = size * _glow.startLifetime / _oldSize;
+            _glow.startSpeed = _oldSize * _glow.startSpeed / size;
+
+            var shape = _glow.shape;
+            shape.scale = new Vector3(lenght_x, lenght_y, lenght_z);
+            _glow.emissionRate = _startingEmissionRate + lenght_y * lenght_x * 3.0f;
         }
         _oldSize = size;
     }

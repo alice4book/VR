@@ -413,6 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 7415898492218101531, guid: 4cfe03ede3dde614480d32ae333fe545, type: 3}
   firePoint: {fileID: 4295252159391731031}
+  fireSpawned: 0
 --- !u!114 &418874349699884844
 MonoBehaviour:
   m_ObjectHideFlags: 0
