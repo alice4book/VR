@@ -4,42 +4,52 @@ using UnityEngine;
 
 public class Burnable : MonoBehaviour
 {
+    public bool _isBurning;
+
     [SerializeField]
-    bool _isBurning;
+    private CapsuleCollider _capsule;
+
     [SerializeField]
-    GameObject _fire;
+    private ParticlesAlwaysUp _particlesAlwaysUp;
+
+    [Range(1.0f, 100.0f)]
+    public float percentage;
+
+
 
     private void Awake()
     {
         _isBurning = false;
-
-    }
-
-    private void Start()
-    {
-        Transform bonfireTransform = transform.Find("Bonfire");
-
-        // Check if the Bonfire child was found
-        if (bonfireTransform != null)
-        {
-            _fire = bonfireTransform.gameObject;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (_isBurning) { }
+        Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
+        if (!_isBurning && otherBurnable != null && otherBurnable._isBurning)
+        {
+            _isBurning = true;
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(true);
+            }
+        }
     }
 
     private void OnValidate()
     {
         if (_isBurning)
         {
-            _fire.SetActive(true);
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(true);
+            }
         }
         else
         {
-            _fire.SetActive(false);
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 }
