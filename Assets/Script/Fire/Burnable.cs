@@ -26,6 +26,11 @@ public class Burnable : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (_isBurning) { }
+    }
+
     private void OnValidate()
     {
         if (_isBurning)

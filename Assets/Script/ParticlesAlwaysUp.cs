@@ -7,7 +7,7 @@ public class ParticlesAlwaysUp : MonoBehaviour
     void LateUpdate()
     {
         // Resetuj globalny obrót obiektu do pocz¹tkowego
-        transform.rotation = Quaternion.identity;
+        transform.rotation = new Quaternion(transform.rotation.x, Quaternion.identity.y, transform.rotation.z, transform.rotation.w);
     }
 
 }

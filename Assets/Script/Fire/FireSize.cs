@@ -13,11 +13,11 @@ public class FireSize : MonoBehaviour
 
     [Range(1.0f, 10.0f)]
     public float size;
-    [Range(0.01f, 1.0f)]
+    [Range(1.0f, 10.0f)]
     public float lenght_x;
-    [Range(0.01f, 1.0f)]
+    [Range(1.0f, 10.0f)]
     public float lenght_y;
-    [Range(0.01f, 1.0f)]
+    [Range(1.0f, 10.0f)]
     public float lenght_z;
 
     [SerializeField]
@@ -32,9 +32,9 @@ public class FireSize : MonoBehaviour
             ParticleSystem particleSystem = child.GetComponent<ParticleSystem>();
             size = 1.0f;
             _oldSize = size;
-            lenght_x = 0.01f;
-            lenght_y = 0.01f;
-            lenght_z = 0.01f;
+            lenght_x = 1.0f;
+            lenght_y = 1.0f;
+            lenght_z = 1.0f;
             // Check if the child has a ParticleSystem component
             if (particleSystem != null)
             {
@@ -63,10 +63,7 @@ public class FireSize : MonoBehaviour
             _alpha.startLifetime = size * _alpha.startLifetime / _oldSize;
             _alpha.startSpeed = _oldSize * _alpha.startSpeed / size;
             _alpha.scalingMode = ParticleSystemScalingMode.Shape;
-            var alphaEmission = _alpha.emission;
-            var rate = alphaEmission.rateOverTime;
-            rate.constant = _startingEmissionRate + lenght_z * lenght_x * 1000;
-            alphaEmission.rateOverTime = rate;
+            _alpha.emissionRate = _startingEmissionRate + lenght_z * lenght_x;
         }
         if (_add != null)
         {
@@ -74,7 +71,7 @@ public class FireSize : MonoBehaviour
             _add.startLifetime = size * _add.startLifetime / _oldSize;
             _add.startSpeed = _oldSize * _add.startSpeed / size;
             _add.scalingMode = ParticleSystemScalingMode.Shape;
-            _add.emissionRate = _startingEmissionRate + lenght_z * lenght_x * 1000;
+            _add.emissionRate = _startingEmissionRate + lenght_z * lenght_x;
         }
         if (_glow != null)
         {
@@ -82,7 +79,7 @@ public class FireSize : MonoBehaviour
             _glow.startLifetime = size * _glow.startLifetime / _oldSize;
             _glow.startSpeed = _oldSize * _glow.startSpeed / size;
             _glow.scalingMode = ParticleSystemScalingMode.Shape;
-            _glow.emissionRate = _startingEmissionRate + lenght_z * lenght_x * 1000;
+            _glow.emissionRate = _startingEmissionRate + lenght_z * lenght_x;
         }
        transform.localScale = new Vector3(lenght_x, lenght_y, lenght_z);
         _oldSize = size;
