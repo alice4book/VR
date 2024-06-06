@@ -19428,53 +19428,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lighter
       objectReference: {fileID: 0}
-    - target: {fileID: 3957288318811470564, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957288318811470564, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957288318811470564, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957288318811470564, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957288318811470564, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 3957288318811470564, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 7100398758523947936, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.67170113
-      objectReference: {fileID: 0}
-    - target: {fileID: 7100398758523947936, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7100398758523947936, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7100398758523947936, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.7408223
-      objectReference: {fileID: 0}
-    - target: {fileID: 7100398758523947936, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -264.397
-      objectReference: {fileID: 0}
-    - target: {fileID: 8368521141113597180, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
-      propertyPath: fireSpawned
-      value: 0
+    - target: {fileID: 3773920838967448193, guid: 41adbefd9d8cff84abb869b6277a6026, type: 3}
+      propertyPath: m_UseDynamicAttach
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26996,6 +26952,14 @@ PrefabInstance:
       value: extinguisher
       objectReference: {fileID: 0}
     - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
+      propertyPath: m_MovementType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
+      propertyPath: m_UseDynamicAttach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
       propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -27011,10 +26975,6 @@ PrefabInstance:
       propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1815717167}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Fire
-      objectReference: {fileID: 0}
     - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
       propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -27035,10 +26995,6 @@ PrefabInstance:
       propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 4608774763202604276, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_ProjectilePrefab
-      value: 
-      objectReference: {fileID: 5236348802649172137, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
