@@ -16,12 +16,27 @@ public class ProduceClouds : MonoBehaviour
     [Tooltip("The speed at which the projectile is launched")]
     float m_LaunchSpeed = 1.0f;
 
+    bool fireSpawned = false;
+    GameObject newObject;
+
     public void Fire()
     {
-        GameObject newObject = Instantiate(m_ProjectilePrefab, m_StartPoint.position, m_StartPoint.rotation, m_StartPoint);
+        if(!fireSpawned) {
+            fireSpawned = true;
+            newObject = Instantiate(m_ProjectilePrefab, m_StartPoint.position, m_StartPoint.rotation, m_StartPoint);
 
-        if (newObject.TryGetComponent(out Rigidbody rigidBody))
-            ApplyForce(rigidBody);
+            if (newObject.TryGetComponent(out Rigidbody rigidBody))
+                ApplyForce(rigidBody);
+        }
+    }
+
+
+    public void FireOff()
+    {
+        if(fireSpawned) {
+            Destroy(newObject);
+            fireSpawned = false;
+        }
     }
 
     void ApplyForce(Rigidbody rigidBody)
