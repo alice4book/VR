@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8126074392246529939}
   - component: {fileID: 213707224030730682}
   - component: {fileID: 4608774763202604276}
+  - component: {fileID: 5537284709356627407}
   m_Layer: 0
   m_Name: extinguisher
   m_TagString: Untagged
@@ -275,7 +276,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339e39f976f0c774c8feed868d3e8a0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lp: {fileID: 4608774763202604276}
 --- !u!114 &4608774763202604276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,5 +548,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2578914150475414134, guid: cc19d44b7f7f36041af44e818b0ee854, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5537284709356627407}
   m_SourcePrefab: {fileID: 100100000, guid: cc19d44b7f7f36041af44e818b0ee854, type: 3}
+--- !u!95 &5537284709356627407
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964841795580947765}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dae3d677aedc4be4babb3fc1d4d5b4ab, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

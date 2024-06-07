@@ -20768,17 +20768,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
---- !u!114 &1815717167 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4608774763202604276, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-  m_PrefabInstance: {fileID: 5029371495273905967}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98aa7b19ab62295479291ac256f56a4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1823426888 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 99cc2a1856d1d8f40954668ce0ee3a7e, type: 3}
@@ -26950,50 +26939,6 @@ PrefabInstance:
     - target: {fileID: 964841795580947765, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
       propertyPath: m_Name
       value: extinguisher
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_MovementType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_UseDynamicAttach
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1815717167}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1815717167}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FireOff
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_Activated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ProduceClouds, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ProduceClouds, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
-      propertyPath: m_Deactivated.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

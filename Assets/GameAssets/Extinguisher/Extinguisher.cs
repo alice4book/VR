@@ -4,18 +4,54 @@ using UnityEngine;
 
 public class Extinguisher : MonoBehaviour
 {
+    [SerializeField]
+    [Tooltip("The projectile that's created")]
+    GameObject m_ProjectilePrefab = null;
 
-    public ProduceClouds lp;
+    [SerializeField]
+    [Tooltip("The point that the project is created")]
+    Transform m_StartPoint = null;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    [Tooltip("The speed at which the projectile is launched")]
+    float m_LaunchSpeed = 1.0f;
+
+    bool fireSpawned = false;
+    GameObject newObject;
+
+    private ExtinguisherAnimations animations;
+
+    public void Fire()
     {
-        //lp.Fire();
+        if(!fireSpawned) {
+            animations.PressHandle();
+            fireSpawned = true;
+            newObject = Instantiate(m_ProjectilePrefab, m_StartPoint.position, m_StartPoint.rotation, m_StartPoint);
+
+            if (newObject.TryGetComponent(out Rigidbody rigidBody))
+                ApplyForce(rigidBody);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void FireOff()
     {
-        
+        if(fireSpawned) {
+            animations.ReleaseHandle();
+            Destroy(newObject);
+            fireSpawned = false;
+        }
+    }
+
+    void ApplyForce(Rigidbody rigidBody)
+    {
+        Vector3 force = m_StartPoint.forward * m_LaunchSpeed;
+        rigidBody.AddForce(force);
+    }
+
+    void Start() {
+
+        animations = GetComponent<ExtinguisherAnimations>();
+
     }
 }
