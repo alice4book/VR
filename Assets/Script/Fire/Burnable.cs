@@ -13,9 +13,6 @@ public class Burnable : MonoBehaviour
     [SerializeField]
     private CapsuleCollider _detectingCapsule;
 
-    [SerializeField]
-    private ParticlesAlwaysUp _particlesAlwaysUp;
-
     [Range(1.0f, 100.0f)]
     public float percentage;
 
@@ -71,7 +68,7 @@ public class Burnable : MonoBehaviour
         }
         if (_isBurning)
         {
-            if (false) // Here detection of gaœnica
+            if (other.transform.gameObject.tag == "ExtinguisherClouds")
             {
                 StopBurning();
             }
@@ -165,8 +162,7 @@ public class Burnable : MonoBehaviour
         if (_detectingCapsule != null)
             _detectingCapsule.enabled = true;
         this.transform.localPosition = startPosition;
-
-        StopCoroutine(ScaleOverTime());
+        StopAllCoroutines();
         fireSize.StopAll();
     }
 }
