@@ -19,6 +19,9 @@ public class Extinguisher : MonoBehaviour
     bool fireSpawned = false;
     GameObject newObject;
 
+    [SerializeField]
+    bool debug;
+
     private ExtinguisherAnimations animations;
 
     public void Fire()
@@ -30,6 +33,18 @@ public class Extinguisher : MonoBehaviour
 
             if (newObject.TryGetComponent(out Rigidbody rigidBody))
                 ApplyForce(rigidBody);
+        }
+    }
+
+    private void OnValidate()
+    {
+        if (debug)
+        {
+            Fire();
+        }
+        else
+        {
+            FireOff();
         }
     }
 

@@ -66,11 +66,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1520319348368676411, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3720447610161331569, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: duration
@@ -102,7 +102,7 @@ PrefabInstance:
       objectReference: {fileID: 2846445596826796114}
     - target: {fileID: 4707320310611999159, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4753065803983070957, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_Height

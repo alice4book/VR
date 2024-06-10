@@ -62,21 +62,11 @@ public class Burnable : MonoBehaviour
             if (otherBurnable != null && otherBurnable._isBurning)
             {
                 StartBurning();
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.SetActive(true);
-                }
-                StartCoroutine(ScaleOverTime());
             }
             Lighter lighter = other.gameObject.GetComponent<Lighter>();
             if (lighter != null && lighter.fireSpawned)
             {
-                _isBurning = true;
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.SetActive(true);
-                }
-                StartCoroutine(ScaleOverTime());
+                StartBurning();
             }
         }
         if (_isBurning)
@@ -84,11 +74,6 @@ public class Burnable : MonoBehaviour
             if (false) // Here detection of gaœnica
             {
                 StopBurning();
-                StopCoroutine(ScaleOverTime());
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.SetActive(false);
-                }
             }
         }
     }
@@ -101,34 +86,19 @@ public class Burnable : MonoBehaviour
             Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
             if (otherBurnable != null && otherBurnable._isBurning)
             {
-                _isBurning = true;
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.SetActive(true);
-                }
-                StartCoroutine(ScaleOverTime());
+                StartBurning();
             }
             Lighter lighter = other.gameObject.GetComponent<Lighter>();
             if (lighter != null && lighter.fireSpawned)
             {
-                _isBurning = true;
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.SetActive(true);
-                }
-                StartCoroutine(ScaleOverTime());
+                StartBurning();
             }
         }
         if (_isBurning)
         {
-            if (false) // And here detection of gaœnica
+            if (false) // Here detection of gaœnica
             {
                 StopBurning();
-                StopCoroutine(ScaleOverTime());
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.SetActive(false);
-                }
             }
         }
     }
@@ -139,21 +109,11 @@ public class Burnable : MonoBehaviour
         {
             Debug.Log("Start burning");
             StartBurning();
-            foreach (Transform child in transform)
-            {
-                child.gameObject.SetActive(true);
-            }
-            StartCoroutine(ScaleOverTime());
         }
         else
         {
             Debug.Log("Stop burning");
-            StopAllCoroutines();
             StopBurning();
-            foreach (Transform child in transform)
-            {
-                child.gameObject.SetActive(false);
-            }
         }
     }
 
@@ -187,16 +147,26 @@ public class Burnable : MonoBehaviour
 
     private void StartBurning()
     {
-        _isBurning = true;
-        _burningCapsule.enabled = true;
-        _detectingCapsule.enabled = false;
+        _isBurning = true; 
+        if (_burningCapsule != null)
+            _burningCapsule.enabled = true;
+        if (_detectingCapsule != null)
+            _detectingCapsule.enabled = false;
+
+        fireSize.StartAll();
+        StartCoroutine(ScaleOverTime());
     }
     private void StopBurning()
     {
         _isBurning = false;
         fireSize.ResetValues();
-        _burningCapsule.enabled = false;
-        _detectingCapsule.enabled = true;
+        if (_burningCapsule != null)
+            _burningCapsule.enabled = false;
+        if (_detectingCapsule != null)
+            _detectingCapsule.enabled = true;
         this.transform.localPosition = startPosition;
+
+        StopCoroutine(ScaleOverTime());
+        fireSize.StopAll();
     }
 }
