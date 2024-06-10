@@ -50,11 +50,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1520319348368676411, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3720447610161331569, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: duration
@@ -84,13 +84,17 @@ PrefabInstance:
       propertyPath: _detectingCapsule
       value: 
       objectReference: {fileID: 9027116141771685712}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: defaultPosition.z
+      value: 0.0003
+      objectReference: {fileID: 0}
     - target: {fileID: 4707320310611999159, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4753065803983070957, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_Height
-      value: 0.00049171847
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 4753065803983070957, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_Enabled

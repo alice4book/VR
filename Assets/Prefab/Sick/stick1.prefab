@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: _detectingCapsule
       value: 
       objectReference: {fileID: 2846445596826796114}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: defaultPosition.z
+      value: 0.0003
+      objectReference: {fileID: 0}
     - target: {fileID: 4707320310611999159, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_IsActive
       value: 1

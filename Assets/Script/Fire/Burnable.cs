@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 
 public class Burnable : MonoBehaviour
 {
@@ -29,6 +31,9 @@ public class Burnable : MonoBehaviour
     private Vector3 endPosition;
 
     [SerializeField]
+    private Vector3 defaultPosition;
+
+    [SerializeField]
     private float duration;
 
     [SerializeField]
@@ -51,6 +56,21 @@ public class Burnable : MonoBehaviour
         }
     }
 
+
+    private Vector3 HitCalculation(Collider a, Collider b)
+    {
+        Vector3 direction;
+        float distance;
+        
+        Physics.ComputePenetration(
+            a, a.transform.position, a.transform.rotation,
+            b, b.transform.position, b.transform.rotation,
+            out direction, out distance);
+        
+        Vector3 hitPoint = a.transform.position + direction * distance;
+        return hitPoint;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!_isBurning)
@@ -58,14 +78,26 @@ public class Burnable : MonoBehaviour
             Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
             if (otherBurnable != null && otherBurnable._isBurning)
             {
+                Vector3 hitPoint = HitCalculation(other, _detectingCapsule);
+
+                transform.position = hitPoint;
+                Vector3 newPos = transform.localPosition;
+                newPos.y = 0f;
+                newPos.x = 0f;
+                transform.localPosition = newPos;
+                startPosition = newPos;
                 StartBurning();
+                return;
             }
             Lighter lighter = other.gameObject.GetComponent<Lighter>();
             if (lighter != null && lighter.fireSpawned)
             {
+                Vector3 hitPoint = HitCalculation(other, _detectingCapsule);
+
                 StartBurning();
+                return;
             }
-        }
+        }else
         if (_isBurning)
         {
             if (other.transform.gameObject.tag == "ExtinguisherClouds")
@@ -90,10 +122,10 @@ public class Burnable : MonoBehaviour
             {
                 StartBurning();
             }
-        }
+        }else
         if (_isBurning)
         {
-            if (false) // Here detection of gaœnica
+            if (other.transform.gameObject.tag == "ExtinguisherClouds")
             {
                 StopBurning();
             }
@@ -161,7 +193,7 @@ public class Burnable : MonoBehaviour
             _burningCapsule.enabled = false;
         if (_detectingCapsule != null)
             _detectingCapsule.enabled = true;
-        this.transform.localPosition = startPosition;
+        this.transform.localPosition = defaultPosition;
         StopAllCoroutines();
         fireSize.StopAll();
     }
