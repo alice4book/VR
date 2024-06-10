@@ -8,7 +8,10 @@ public class Burnable : MonoBehaviour
     public bool _isBurning;
 
     [SerializeField]
-    private CapsuleCollider _capsule;
+    private CapsuleCollider _burningCapsule;
+
+    [SerializeField]
+    private CapsuleCollider _detectingCapsule;
 
     [SerializeField]
     private ParticlesAlwaysUp _particlesAlwaysUp;
@@ -41,30 +44,92 @@ public class Burnable : MonoBehaviour
     private void Awake()
     {
         _isBurning = false;
-        _capsule = GetComponent<CapsuleCollider>(); 
+        if(_burningCapsule != null)
+        {
+            _burningCapsule.enabled = false;
+        }
+        if (_detectingCapsule != null)
+        {
+            _detectingCapsule.enabled = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
-        if (!_isBurning && otherBurnable != null && otherBurnable._isBurning)
+        if (!_isBurning)
         {
-            _isBurning = true;
-            foreach (Transform child in transform)
+            Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
+            if (otherBurnable != null && otherBurnable._isBurning)
             {
-                child.gameObject.SetActive(true);
+                StartBurning();
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(true);
+                }
+                StartCoroutine(ScaleOverTime());
             }
-            StartCoroutine(ScaleOverTime());
+            Lighter lighter = other.gameObject.GetComponent<Lighter>();
+            if (lighter != null && lighter.fireSpawned)
+            {
+                _isBurning = true;
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(true);
+                }
+                StartCoroutine(ScaleOverTime());
+            }
         }
-        Lighter lighter = other.gameObject.GetComponent<Lighter>();
-        if (!_isBurning && lighter != null && lighter.fireSpawned)
+        if (_isBurning)
         {
-            _isBurning = true;
-            foreach (Transform child in transform)
+            if (false) // Here detection of gaœnica
             {
-                child.gameObject.SetActive(true);
+                StopBurning();
+                StopCoroutine(ScaleOverTime());
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(false);
+                }
             }
-            StartCoroutine(ScaleOverTime());
+        }
+    }
+
+    // Can be little to much for VR
+    private void OnTriggerStay(Collider other)
+    {
+        if (!_isBurning)
+        {
+            Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
+            if (otherBurnable != null && otherBurnable._isBurning)
+            {
+                _isBurning = true;
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(true);
+                }
+                StartCoroutine(ScaleOverTime());
+            }
+            Lighter lighter = other.gameObject.GetComponent<Lighter>();
+            if (lighter != null && lighter.fireSpawned)
+            {
+                _isBurning = true;
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(true);
+                }
+                StartCoroutine(ScaleOverTime());
+            }
+        }
+        if (_isBurning)
+        {
+            if (false) // And here detection of gaœnica
+            {
+                StopBurning();
+                StopCoroutine(ScaleOverTime());
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.SetActive(false);
+                }
+            }
         }
     }
 
@@ -72,6 +137,8 @@ public class Burnable : MonoBehaviour
     {
         if (_isBurning)
         {
+            Debug.Log("Start burning");
+            StartBurning();
             foreach (Transform child in transform)
             {
                 child.gameObject.SetActive(true);
@@ -80,6 +147,9 @@ public class Burnable : MonoBehaviour
         }
         else
         {
+            Debug.Log("Stop burning");
+            StopAllCoroutines();
+            StopBurning();
             foreach (Transform child in transform)
             {
                 child.gameObject.SetActive(false);
@@ -104,7 +174,7 @@ public class Burnable : MonoBehaviour
             fireSize.lenght_x = scaleValues.x;
             fireSize.lenght_y = scaleValues.y;
             fireSize.lenght_z = scaleValues.z;
-            _capsule.height = scaleValues.y * 0.0002f;
+            _burningCapsule.height = scaleValues.y * 0.0002f;
 
             fireSize.UpdateValues();
             Vector3 posValues = Vector3.Lerp(startPosition, endPosition, elapsedTime / duration);
@@ -113,5 +183,20 @@ public class Burnable : MonoBehaviour
             yield return null; // Wait for the next frame
         }
         fireSize.UpdateValues();
+    }
+
+    private void StartBurning()
+    {
+        _isBurning = true;
+        _burningCapsule.enabled = true;
+        _detectingCapsule.enabled = false;
+    }
+    private void StopBurning()
+    {
+        _isBurning = false;
+        fireSize.ResetValues();
+        _burningCapsule.enabled = false;
+        _detectingCapsule.enabled = true;
+        this.transform.localPosition = startPosition;
     }
 }

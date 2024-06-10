@@ -131,4 +131,12 @@ public class FireSize : MonoBehaviour
         _oldSize = size;
     }
 
+
+    public void ResetValues()
+    {
+        size = 1.0f;
+        lenght_x = 1.0f;
+        lenght_y = 1.0f;
+        lenght_z = 1.0f;
+    }
 }

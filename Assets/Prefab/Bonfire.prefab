@@ -14509,9 +14509,9 @@ GameObject:
   m_Component:
   - component: {fileID: 920285749874956475}
   - component: {fileID: 4960908529389387902}
-  - component: {fileID: 7893177707358951281}
   - component: {fileID: 4551293667268228995}
   - component: {fileID: 4753065803983070957}
+  - component: {fileID: 4521930797632653696}
   m_Layer: 0
   m_Name: Bonfire
   m_TagString: Untagged
@@ -14553,22 +14553,10 @@ MonoBehaviour:
   _add: {fileID: 0}
   _glow: {fileID: 0}
   size: 0
-  lenght_x: 0.01
-  lenght_y: 0
-  lenght_z: 0
+  lenght_x: 1
+  lenght_y: 1
+  lenght_z: 1
   _startingEmissionRate: 10
---- !u!114 &7893177707358951281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7063220421966822012}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f167246584350664fb975d1bde19f38e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4551293667268228995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14582,8 +14570,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isBurning: 1
-  _capsule: {fileID: 4753065803983070957}
-  _particlesAlwaysUp: {fileID: 7893177707358951281}
+  _burningCapsule: {fileID: 0}
+  _detectingCapsule: {fileID: 0}
+  _particlesAlwaysUp: {fileID: 0}
   percentage: 0
   startScale: {x: 1, y: 1, z: 1}
   endScale: {x: 1, y: 1, z: 1}
@@ -14612,6 +14601,29 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.001
-  m_Height: 0.001
+  m_Height: 0.0002
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &4521930797632653696
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7063220421966822012}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.001
+  m_Height: 0.006
+  m_Direction: 2
+  m_Center: {x: 0, y: 0, z: 0.0024}
