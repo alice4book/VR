@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,38 +8,53 @@ using static UnityEditor.FilePathAttribute;
 
 public class Burnable : MonoBehaviour
 {
+    public event Action OnStartBurning;
+    public event Action OnStopBurning;
+
+    [Tooltip("Is object burning")]
     public bool _isBurning;
 
+    [Tooltip("Collider when object is burning")]
     [SerializeField]
     private CapsuleCollider _burningCapsule;
 
+    [Tooltip("Collider when object is NOT burning")]
     [SerializeField]
     private CapsuleCollider _detectingCapsule;
 
+    [Tooltip("The percentage of fire consumption")]
     [Range(1.0f, 100.0f)]
     public float percentage;
 
+    [Tooltip("Scale when fire starts burning")]
     [SerializeField]
     private Vector3 startScale;
 
+    [Tooltip("Max scale of fire we want to cover the object")]
     [SerializeField]
     private Vector3 endScale;
 
+    [Tooltip("Position where fire starts burning")]
     [SerializeField]
     private Vector3 startPosition;
 
+    [Tooltip("Ending position if fire needs to move during scaling")]
     [SerializeField]
     private Vector3 endPosition;
 
+    [Tooltip("Position where collider gonna comback if fire was extinguish")]
     [SerializeField]
     private Vector3 defaultPosition;
 
+    [Tooltip("How quickly the fire spreads")]
     [SerializeField]
     private float duration;
 
+    [Tooltip("How long it takes for fire to spread spreads")]
     [SerializeField]
     private float delay;
 
+    [Tooltip("Script controlling fire size")]
     [SerializeField]
     private FireSize fireSize;
 
@@ -57,47 +73,23 @@ public class Burnable : MonoBehaviour
     }
 
 
-    private Vector3 HitCalculation(Collider a, Collider b)
-    {
-        Vector3 direction;
-        float distance;
-        
-        Physics.ComputePenetration(
-            a, a.transform.position, a.transform.rotation,
-            b, b.transform.position, b.transform.rotation,
-            out direction, out distance);
-        
-        Vector3 hitPoint = a.transform.position + direction * distance;
-        return hitPoint;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (!_isBurning)
         {
+            Vector3 hitPoint = HitCalculation(other, _detectingCapsule);
             Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
             if (otherBurnable != null && otherBurnable._isBurning)
             {
-                Vector3 hitPoint = HitCalculation(other, _detectingCapsule);
-
-                transform.position = hitPoint;
-                Vector3 newPos = transform.localPosition;
-                newPos.y = 0f;
-                newPos.x = 0f;
-                transform.localPosition = newPos;
-                startPosition = newPos;
-                StartBurning();
-                return;
+                StartBurning(hitPoint);
             }
             Lighter lighter = other.gameObject.GetComponent<Lighter>();
             if (lighter != null && lighter.fireSpawned)
             {
-                Vector3 hitPoint = HitCalculation(other, _detectingCapsule);
-
-                StartBurning();
-                return;
+                StartBurning(hitPoint);
             }
-        }else
+        }
+        else
         if (_isBurning)
         {
             if (other.transform.gameObject.tag == "ExtinguisherClouds")
@@ -112,15 +104,16 @@ public class Burnable : MonoBehaviour
     {
         if (!_isBurning)
         {
+            Vector3 hitPoint = HitCalculation(other, _detectingCapsule);
             Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
             if (otherBurnable != null && otherBurnable._isBurning)
             {
-                StartBurning();
+                StartBurning(hitPoint);
             }
             Lighter lighter = other.gameObject.GetComponent<Lighter>();
             if (lighter != null && lighter.fireSpawned)
             {
-                StartBurning();
+                StartBurning(hitPoint);
             }
         }else
         if (_isBurning)
@@ -137,7 +130,7 @@ public class Burnable : MonoBehaviour
         if (_isBurning)
         {
             Debug.Log("Start burning");
-            StartBurning();
+            StartBurning(transform.position);
         }
         else
         {
@@ -174,9 +167,16 @@ public class Burnable : MonoBehaviour
         fireSize.UpdateValues();
     }
 
-    private void StartBurning()
+    private void StartBurning(Vector3 hitPoint)
     {
-        _isBurning = true; 
+        transform.position = hitPoint;
+        Vector3 newPos = transform.localPosition;
+        newPos.y = 0f;
+        newPos.x = 0f;
+        transform.localPosition = newPos;
+        startPosition = newPos;
+        _isBurning = true;
+        OnStartBurning?.Invoke();
         if (_burningCapsule != null)
             _burningCapsule.enabled = true;
         if (_detectingCapsule != null)
@@ -185,9 +185,11 @@ public class Burnable : MonoBehaviour
         fireSize.StartAll();
         StartCoroutine(ScaleOverTime());
     }
+
     private void StopBurning()
     {
         _isBurning = false;
+        OnStopBurning?.Invoke();
         fireSize.ResetValues();
         if (_burningCapsule != null)
             _burningCapsule.enabled = false;
@@ -196,5 +198,19 @@ public class Burnable : MonoBehaviour
         this.transform.localPosition = defaultPosition;
         StopAllCoroutines();
         fireSize.StopAll();
+    }
+
+    private Vector3 HitCalculation(Collider a, Collider b)
+    {
+        Vector3 direction;
+        float distance;
+
+        Physics.ComputePenetration(
+            a, a.transform.position, a.transform.rotation,
+            b, b.transform.position, b.transform.rotation,
+            out direction, out distance);
+
+        Vector3 hitPoint = a.transform.position + direction * distance;
+        return hitPoint;
     }
 }
