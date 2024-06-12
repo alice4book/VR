@@ -7,6 +7,9 @@ public class Spawner : MonoBehaviour
     public GameObject obj1;
     public GameObject obj2;
     public GameObject obj3;
+    public GameObject obj4;
+    public GameObject obj5;
+    public GameObject obj6;
     int randNum;
     public Transform spawnDest1;
     public float spawnTime;
@@ -23,7 +26,7 @@ public class Spawner : MonoBehaviour
         stickrotation.SetEulerAngles(80,0,0);
             while (spawningfalg)
             {
-                randNum = Random.Range(1, 4);
+                randNum = Random.Range(1, 7);
                 yield return new WaitForSeconds(spawnTime);
                 switch (randNum) {
                     case 1:
@@ -35,7 +38,16 @@ public class Spawner : MonoBehaviour
                     case 3:
                         Instantiate(obj3, spawnDest1.position, stickrotation);
                         break;
-                }
+                    case 4:
+                        Instantiate(obj4, spawnDest1.position, stickrotation);
+                        break;
+                    case 5:
+                        Instantiate(obj5, spawnDest1.position, stickrotation);
+                        break;
+                    case 6:
+                        Instantiate(obj6, spawnDest1.position, stickrotation);
+                        break;
+            }
             }
     }
 }
