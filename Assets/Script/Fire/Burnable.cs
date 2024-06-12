@@ -77,14 +77,23 @@ public class Burnable : MonoBehaviour
     {
         if (!_isBurning)
         {
+            Debug.Log(other.gameObject.name);
+            Debug.Log(other.gameObject.tag);
             Vector3 hitPoint = HitCalculation(other, _detectingCapsule);
             Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
             if (otherBurnable != null && otherBurnable._isBurning)
             {
                 StartBurning(hitPoint);
+                return;
             }
             Lighter lighter = other.gameObject.GetComponent<Lighter>();
             if (lighter != null && lighter.fireSpawned)
+            {
+                StartBurning(hitPoint);
+                return;
+            }
+            else
+            if (other.gameObject.tag == "FireStarter")
             {
                 StartBurning(hitPoint);
             }
@@ -115,7 +124,13 @@ public class Burnable : MonoBehaviour
             {
                 StartBurning(hitPoint);
             }
-        }else
+            else
+            if (other.gameObject.tag == "FireStarter")
+            {
+                StartBurning(hitPoint);
+            }
+        }
+        else
         if (_isBurning)
         {
             if (other.transform.gameObject.tag == "ExtinguisherClouds")

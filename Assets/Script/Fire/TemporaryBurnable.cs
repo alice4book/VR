@@ -54,7 +54,12 @@ public class TemporaryBurnable : MonoBehaviour
                 if (lighter != null && lighter.fireSpawned)
                 {
                     StartBurning(contact.point);
-                } 
+                }
+                else
+                if (otherBurnable.gameObject.tag == "FireStarter")
+                {
+                    StartBurning(contact.point);
+                }
             }
         }
     }
