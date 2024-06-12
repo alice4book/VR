@@ -20,7 +20,7 @@ public class Burnable : MonoBehaviour
 
     [Tooltip("Collider when object is NOT burning")]
     [SerializeField]
-    private CapsuleCollider _detectingCapsule;
+    private Collider _detectingCapsule;
 
     [Tooltip("The percentage of fire consumption")]
     [Range(1.0f, 100.0f)]
@@ -129,12 +129,12 @@ public class Burnable : MonoBehaviour
     {
         if (_isBurning)
         {
-            Debug.Log("Start burning");
+            //Debug.Log("Start burning");
             StartBurning(transform.position);
         }
         else
         {
-            Debug.Log("Stop burning");
+            //Debug.Log("Stop burning");
             StopBurning();
         }
     }
@@ -167,7 +167,7 @@ public class Burnable : MonoBehaviour
         fireSize.UpdateValues();
     }
 
-    private void StartBurning(Vector3 hitPoint)
+    public void StartBurning(Vector3 hitPoint)
     {
         transform.position = hitPoint;
         Vector3 newPos = transform.localPosition;
