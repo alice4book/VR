@@ -124,7 +124,6 @@ public class Burnable : MonoBehaviour
             }
         }
     }
-
     private void OnValidate()
     {
         if (_isBurning)

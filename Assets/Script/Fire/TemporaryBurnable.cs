@@ -35,31 +35,31 @@ public class TemporaryBurnable : MonoBehaviour
         {
             GameObject bonfire = collision.gameObject.transform.GetChild(0).gameObject;
             if(bonfire != null) {            
+                ContactPoint contact = collision.GetContact(0);
                 Burnable otherBurnable = bonfire.GetComponent<Burnable>();
                 if (otherBurnable != null && otherBurnable._isBurning)
                 {
-                    StartBurning(collision);
+                    StartBurning(contact.point);
                 }
                 Lighter lighter = bonfire.GetComponent<Lighter>();
                 if (lighter != null && lighter.fireSpawned)
                 {
-                    StartBurning(collision);
+                    StartBurning(contact.point);
                 } 
             }
         }
     }
 
-    private void StartBurning(Collision collision) 
+    private void StartBurning(Vector3 vec)
     {
         _isBurning = true;
 
-        // Get the first contact point of the collision
-        ContactPoint contact = collision.GetContact(0);
-
         // Instantiate the fire at the contact point
-        GameObject _newFire = Instantiate(_fire, contact.point, Quaternion.identity);
+        GameObject _newFire = Instantiate(_fire, vec, Quaternion.identity, transform);
 
+        //_newFire.transform.position = contact.point;
         FireSize bonfire = _newFire.GetComponent<FireSize>();
+
         if (bonfire != null)
         {
             bonfire.StartAll();
