@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 920285749874956475, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 920285749874956475, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -219,6 +219,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3d5019bd85d09934898d7ac8dd55315b, type: 3}
       propertyPath: m_Name
       value: stick1-thicc
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3d5019bd85d09934898d7ac8dd55315b, type: 3}
+      propertyPath: m_TagString
+      value: Stick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -9,6 +9,7 @@ TagManager:
   - Rain
   - Flint
   - FireStarter
+  - Stick
   layers:
   - Default
   - TransparentFX

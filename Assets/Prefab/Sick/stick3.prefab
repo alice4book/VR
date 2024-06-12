@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 920285749874956475, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0003
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 920285749874956475, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,6 +54,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3720447610161331569, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4521930797632653696, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
@@ -310,6 +314,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c528dc667d2e556448ebb2e9fd8110fa, type: 3}
       propertyPath: m_Name
       value: stick3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c528dc667d2e556448ebb2e9fd8110fa, type: 3}
+      propertyPath: m_TagString
+      value: Stick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
