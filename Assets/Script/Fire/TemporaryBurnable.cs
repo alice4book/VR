@@ -17,16 +17,25 @@ public class TemporaryBurnable : MonoBehaviour
     [Tooltip("Is object burning")]
     private bool _isBurning;
 
+    [SerializeField]
+    [Tooltip("How long fire exist befor rain")]
+    private float _timeBeforRain;
+
     private void Start()
     {
+        _collider = GetComponent<MeshCollider>();
+        if(_collider == null){
+            Debug.Log("No mesh collider on tree or bush");
+        }
+
         _isBurning = false;
-        /*
-        GameObject rainObj = GameObject.FindWithTag("rain");
+        
+        GameObject rainObj = GameObject.FindWithTag("Rain");
         if (rainObj != null)
         {
             _rain = rainObj.GetComponent<Rain>();
         }
-        */
+        _timeBeforRain = 1.5f;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -64,5 +73,13 @@ public class TemporaryBurnable : MonoBehaviour
         {
             bonfire.StartAll();
         }
+
+        Invoke("StartRain", _timeBeforRain);
+    }
+
+
+    private void StartRain()
+    {
+        _rain.StartRain();
     }
 }

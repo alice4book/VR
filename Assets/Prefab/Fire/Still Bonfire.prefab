@@ -14510,7 +14510,7 @@ GameObject:
   - component: {fileID: 920285749874956475}
   - component: {fileID: 4960908529389387902}
   - component: {fileID: 4753065803983070957}
-  - component: {fileID: 4521930797632653696}
+  - component: {fileID: 2621128012396686682}
   m_Layer: 0
   m_Name: Still Bonfire
   m_TagString: Untagged
@@ -14576,29 +14576,19 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.001
-  m_Height: 0.0002
+  m_Height: 0.001
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &4521930797632653696
-CapsuleCollider:
+--- !u!114 &2621128012396686682
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7063220421966822012}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 0.001
-  m_Height: 0.006
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.0024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc2bbbdcb743604cb1f38a80e91fd6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireSize: {fileID: 4960908529389387902}

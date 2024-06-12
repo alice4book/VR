@@ -28,31 +28,31 @@ public class Burnable : MonoBehaviour
 
     [Tooltip("Scale when fire starts burning")]
     [SerializeField]
-    private Vector3 startScale;
+    private Vector3 _startScale;
 
     [Tooltip("Max scale of fire we want to cover the object")]
     [SerializeField]
-    private Vector3 endScale;
+    private Vector3 _endScale;
 
     [Tooltip("Position where fire starts burning")]
     [SerializeField]
-    private Vector3 startPosition;
+    private Vector3 _startPosition;
 
     [Tooltip("Ending position if fire needs to move during scaling")]
     [SerializeField]
-    private Vector3 endPosition;
+    private Vector3 _endPosition;
 
     [Tooltip("Position where collider gonna comback if fire was extinguish")]
     [SerializeField]
-    private Vector3 defaultPosition;
+    private Vector3 _defaultPosition;
 
     [Tooltip("How quickly the fire spreads")]
     [SerializeField]
-    private float duration;
+    private float _duration;
 
     [Tooltip("How long it takes for fire to spread spreads")]
     [SerializeField]
-    private float delay;
+    private float _delay;
 
     [Tooltip("Script controlling fire size")]
     [SerializeField]
@@ -141,24 +141,24 @@ public class Burnable : MonoBehaviour
     IEnumerator ScaleOverTime()
     {
         // Optional delay
-        if (delay > 0)
+        if (_delay > 0)
         {
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(_delay);
         }
 
         float elapsedTime = 0.0f;
 
-        while (elapsedTime < duration)
+        while (elapsedTime < _duration)
         {
             // Interpolate the scale based on the elapsed time
-            Vector3 scaleValues = Vector3.Lerp(startScale, endScale, elapsedTime / duration);
+            Vector3 scaleValues = Vector3.Lerp(_startScale, _endScale, elapsedTime / _duration);
             fireSize.lenght_x = scaleValues.x;
             fireSize.lenght_y = scaleValues.y;
             fireSize.lenght_z = scaleValues.z;
             _burningCapsule.height = scaleValues.y * 0.0002f;
 
             fireSize.UpdateValues();
-            Vector3 posValues = Vector3.Lerp(startPosition, endPosition, elapsedTime / duration);
+            Vector3 posValues = Vector3.Lerp(_startPosition, _endPosition, elapsedTime / _duration);
             transform.localPosition = posValues;
             elapsedTime += Time.deltaTime;
             yield return null; // Wait for the next frame
@@ -173,7 +173,7 @@ public class Burnable : MonoBehaviour
         newPos.y = 0f;
         newPos.x = 0f;
         transform.localPosition = newPos;
-        startPosition = newPos;
+        _startPosition = newPos;
         _isBurning = true;
         OnStartBurning?.Invoke();
         if (_burningCapsule != null)
@@ -194,7 +194,7 @@ public class Burnable : MonoBehaviour
             _burningCapsule.enabled = false;
         if (_detectingCapsule != null)
             _detectingCapsule.enabled = true;
-        this.transform.localPosition = defaultPosition;
+        this.transform.localPosition = _defaultPosition;
         StopAllCoroutines();
         fireSize.StopAll();
     }
