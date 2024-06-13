@@ -13,7 +13,7 @@ public class Mushroom : MonoBehaviour {
         //CheckCollision(collision.gameObject);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         CheckCollision(other.gameObject);
     }

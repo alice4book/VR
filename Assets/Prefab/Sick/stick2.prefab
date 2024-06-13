@@ -124,7 +124,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &7698905840639587236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _burnable: {fileID: 4788275344513706278}
   _XRGrab: {fileID: 7698905840639587236}
-  _canHoldAlways: 0
+  _canHoldAlways: 1
 --- !u!1001 &9032583080384257701
 PrefabInstance:
   m_ObjectHideFlags: 0

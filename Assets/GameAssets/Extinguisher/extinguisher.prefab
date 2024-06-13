@@ -32,12 +32,13 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.5559149, y: -1.61, z: 17.192947}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 487777543567561313}
   - {fileID: 1735388057384632398}
   - {fileID: 8408888927940416208}
+  - {fileID: 750175799032554416}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8475678392406647289
@@ -66,7 +67,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &3009740710989941006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +196,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 1
+  m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -289,8 +290,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ProjectilePrefab: {fileID: 5236348802649172137, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+  extinguisherCloud: {fileID: 0}
   m_StartPoint: {fileID: 8408888927940416208}
   m_LaunchSpeed: 200
+  debug: 0
 --- !u!1 &2864615694724927081
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +550,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2918882782767800524, guid: cc19d44b7f7f36041af44e818b0ee854, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 750175799032554416}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2578914150475414134, guid: cc19d44b7f7f36041af44e818b0ee854, type: 3}
       insertIndex: -1
@@ -574,3 +580,81 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &258873978360126962
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 443637741125449615}
+    m_Modifications:
+    - target: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.689
+      objectReference: {fileID: 0}
+    - target: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236348802649172137, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_Name
+      value: ExtinguisherClouds
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823142091098033166, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823142091098033166, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627144741711363713, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7627144741711363713, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+--- !u!4 &750175799032554416 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 720184965845843522, guid: 0d8e3eb57f7d9564581a8fc05151b91e, type: 3}
+  m_PrefabInstance: {fileID: 258873978360126962}
+  m_PrefabAsset: {fileID: 0}
