@@ -38,8 +38,7 @@ public class FireSize : MonoBehaviour
         {
             // Get the ParticleSystem component from the child
             ParticleSystem particleSystem = child.GetComponent<ParticleSystem>();
-            size = 1.0f;
-            _oldSize = size;
+            _oldSize = 1.0f;
             lenght_x = 1.0f;
             lenght_y = 1.0f;
             lenght_z = 1.0f;
@@ -65,13 +64,13 @@ public class FireSize : MonoBehaviour
                 }
             }
         }
+        UpdateValues();
     }
 
     private void OnValidate()
     {
         UpdateValues();
     }
-
 
     public void UpdateValues()
     {
@@ -110,7 +109,6 @@ public class FireSize : MonoBehaviour
         _oldSize = size;
     }
 
-
     public void ResetValues()
     {
         size = 1.0f;
@@ -128,6 +126,7 @@ public class FireSize : MonoBehaviour
         if (_add != null)
             _add.Play();
     }
+
     public void StopAll()
     {
         if (_alpha != null)

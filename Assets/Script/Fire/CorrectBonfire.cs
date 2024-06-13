@@ -18,8 +18,13 @@ public class CorrectBonfire : MonoBehaviour
     [Tooltip("How many objects needs to be in bonfire")]
     private List<int> _listOfValues;
 
+    private List<GameObject> _objests;
+
     [SerializeField]
     private ParticleSystem _particleSystem;
+
+    [SerializeField]
+    private FireSize _fireSize;
 
     private void Awake()
     {
@@ -28,6 +33,9 @@ public class CorrectBonfire : MonoBehaviour
             Debug.LogError("The number of objects and values must be the same.");
             return;
         }
+
+        _listForComplition = new Dictionary<string, int>();
+        _listOfCurrentObj = new Dictionary<string, int>();
 
         for (int i = 0; i < _listOfObj.Count; i++)
         {
@@ -47,6 +55,7 @@ public class CorrectBonfire : MonoBehaviour
         if (CheckCompletion())
         {
             _particleSystem.Play();
+            _fireSize.StartAll();
         }
     }
 
@@ -75,6 +84,15 @@ public class CorrectBonfire : MonoBehaviour
                 Debug.Log("Value too low for key: " + kvp.Key + ". Required: " + kvp.Value + ", Found: " + currentValue);
                 return false;
             }
+        }
+
+        foreach(var obj in _objests)
+        {
+            var burnable = obj.GetComponent<Burnable>();
+            if (burnable == null)
+                return false;
+            if(!burnable._isBurning)
+                return false;
         }
 
         // All keys found with equal or higher values
