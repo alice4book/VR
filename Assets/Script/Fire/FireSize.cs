@@ -12,6 +12,9 @@ public class FireSize : MonoBehaviour
     [Tooltip("The projectile creating glowing part")]
     private ParticleSystem _glow;
 
+    [SerializeField] 
+    private AudioSource _crackingFireNoise;
+
     [Tooltip("Scal whole bonfire")]
     [Range(1.0f, 10.0f)]
     public float size;
@@ -62,6 +65,8 @@ public class FireSize : MonoBehaviour
                 }
             }
         }
+        _crackingFireNoise = GetComponent<AudioSource>();
+
         UpdateValues();
     }
 
@@ -123,6 +128,8 @@ public class FireSize : MonoBehaviour
             _glow.Play();
         if (_add != null)
             _add.Play();
+        if(_crackingFireNoise)
+            _crackingFireNoise.Play();
     }
 
     public void StopAll()
@@ -133,5 +140,7 @@ public class FireSize : MonoBehaviour
             _glow.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         if (_add != null)
             _add.Stop(true, ParticleSystemStopBehavior.StopEmitting);
+        if ( _crackingFireNoise)
+            _crackingFireNoise.Stop();
     }
 }
