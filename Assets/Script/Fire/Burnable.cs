@@ -135,6 +135,7 @@ public class Burnable : MonoBehaviour
             }
         }
     }
+    /*
     private void OnValidate()
     {
         if (_isBurning)
@@ -148,7 +149,7 @@ public class Burnable : MonoBehaviour
             StopBurning();
         }
     }
-
+    */
     IEnumerator ScaleOverTime()
     {
         // Optional delay

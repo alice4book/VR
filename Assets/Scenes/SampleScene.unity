@@ -34725,9 +34725,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 81f6aa04292c94c4883ab3460e39bc7f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -34744,23 +34744,32 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.08211517
-      value: 0.96775055
-      inSlope: -4.0016
-      outSlope: -4.0016
+      time: 0.01889801
+      value: 0.33735657
+      inSlope: -2.5363984
+      outSlope: -2.5363984
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.10938901
     - serializedVersion: 3
-      time: 0.5
-      value: 0.5
-      inSlope: -1.0004
-      outSlope: -1.0004
+      time: 0.50286865
+      value: 0.27153015
+      inSlope: -0.07837081
+      outSlope: -0.07837081
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
-      outWeight: 0
+      inWeight: 0.33667365
+      outWeight: 0.098180965
+    - serializedVersion: 3
+      time: 0.9369416
+      value: 0.07377142
+      inSlope: 0.19907932
+      outSlope: 0.19907932
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0.25
@@ -37382,7 +37391,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -37391,7 +37400,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 20
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -38079,6 +38088,14 @@ PrefabInstance:
     - target: {fileID: 7820327307643119056, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
       propertyPath: _listOfValues.Array.data[1]
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099491601617207297, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8099491601617207297, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8254955465356919960, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
       propertyPath: m_Mesh
