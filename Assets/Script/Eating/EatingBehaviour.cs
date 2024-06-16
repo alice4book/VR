@@ -11,7 +11,7 @@ public class EatingBehaviour : MonoBehaviour
     {
         if(other.tag == "Food")
         {
-            
+            Eating(other.gameObject);
         }
     }
 
