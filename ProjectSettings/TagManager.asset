@@ -10,6 +10,7 @@ TagManager:
   - Flint
   - FireStarter
   - Stick
+  - Food
   layers:
   - Default
   - TransparentFX
