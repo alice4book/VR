@@ -14555,9 +14555,9 @@ MonoBehaviour:
   _glow: {fileID: 0}
   _crackingFireNoise: {fileID: 0}
   size: 0
-  lenght_x: 1
-  lenght_y: 1
-  lenght_z: 1
+  lenght_x: 0
+  lenght_y: 0
+  lenght_z: 0
   _startingEmissionRate: 10
 --- !u!114 &4551293667268228995
 MonoBehaviour:
@@ -14578,9 +14578,9 @@ MonoBehaviour:
   _startScale: {x: 0, y: 0, z: 0}
   _endScale: {x: 0, y: 0, z: 0}
   _startPosition: {x: 0, y: 0, z: 0}
-  _endPosition: {x: 0, y: 0, z: 0}
+  _endPosition: {x: 0, y: 0, z: 0.0027}
   _defaultPosition: {x: 0, y: 0, z: 0}
-  _duration: 0
+  _duration: 4
   _delay: 0
   fireSize: {fileID: 4960908529389387902}
 --- !u!136 &4753065803983070957
@@ -14603,7 +14603,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.001
-  m_Height: 0.0002
+  m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &4521930797632653696

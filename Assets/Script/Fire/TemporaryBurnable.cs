@@ -22,10 +22,6 @@ public class TemporaryBurnable : MonoBehaviour
     private void Start()
     {
         _collider = GetComponent<MeshCollider>();
-        if(_collider == null){
-            Debug.Log("No mesh collider on tree or bush");
-        }
-
         _isBurning = false;
         
         GameObject rainObj = GameObject.FindWithTag("Rain");
@@ -40,21 +36,25 @@ public class TemporaryBurnable : MonoBehaviour
     {
         if (!_isBurning)
         {
+            Debug.Log("Here");
             GameObject bonfire = collision.gameObject.transform.GetChild(0).gameObject;
-            if(bonfire != null) {            
+            if(bonfire != null)
+            {
+                Debug.Log("HereHere");
                 ContactPoint contact = collision.GetContact(0);
                 Burnable otherBurnable = bonfire.GetComponent<Burnable>();
                 if (otherBurnable != null && otherBurnable._isBurning)
                 {
+                    Debug.Log("HereHereHere");
                     StartBurning(contact.point);
                 }
-                Lighter lighter = bonfire.GetComponent<Lighter>();
+                Lighter lighter = collision.gameObject.GetComponent<Lighter>();
                 if (lighter != null && lighter.fireSpawned)
                 {
                     StartBurning(contact.point);
                 }
                 else
-                if (otherBurnable.gameObject.tag == "FireStarter")
+                if (collision.gameObject.tag == "FireStarter")
                 {
                     StartBurning(contact.point);
                 }

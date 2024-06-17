@@ -386,12 +386,40 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: _duration
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: _isBurning
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: endScale.y
       value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: _endScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: _endScale.y
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: _endScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: _startScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: _startScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: _startScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: endPosition.z
@@ -439,6 +467,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960908529389387902, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960908529389387902, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: lenght_x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4960908529389387902, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: lenght_y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4960908529389387902, guid: 7495632fa63e10149982b0837085ed9e, type: 3}

@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: Infinity
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.01
+      scalar: 0
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 100000
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -672,7 +672,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.01, y: 0.01, z: 0.01}
+    m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 13
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -4955,7 +4955,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: Infinity
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5008,7 +5008,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5126,7 +5126,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.4
+      scalar: 100000
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5511,7 +5511,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.01, y: 0.01, z: 0.01}
+    m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -5709,7 +5709,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 13
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -9785,7 +9785,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: Infinity
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9838,7 +9838,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9956,7 +9956,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.45
+      scalar: 100000
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10341,7 +10341,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.01, y: 0.01, z: 0.01}
+    m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -10539,7 +10539,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 13
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -14549,11 +14549,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d55d478d1aa804fa3d3737356a3d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _alpha: {fileID: 0}
-  _add: {fileID: 0}
-  _glow: {fileID: 0}
-  _crackingFireNoise: {fileID: 0}
-  size: 0
+  _alpha: {fileID: 1598325763234784529}
+  _add: {fileID: 8902042968330369517}
+  _glow: {fileID: 4891309129455609653}
+  _crackingFireNoise: {fileID: 4121221273891035910}
+  size: 3
   lenght_x: 1
   lenght_y: 1
   lenght_z: 1
