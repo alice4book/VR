@@ -9,6 +9,10 @@ public class Extinguisher : MonoBehaviour
     GameObject m_ProjectilePrefab = null;
 
     [SerializeField]
+    [Tooltip("Colliders for Projectails")]
+    GameObject colliders = null;
+
+    [SerializeField]
     ParticleSystem extinguisherCloud;
 
     [SerializeField]
@@ -44,6 +48,7 @@ public class Extinguisher : MonoBehaviour
                 }
             }
         }
+        colliders.SetActive(false);
     }
 
 
@@ -59,6 +64,7 @@ public class Extinguisher : MonoBehaviour
             if(extinguisherCloud != null)
             {
                 extinguisherCloud.Play();
+                colliders.SetActive(true);
             }
         }
     }
@@ -86,6 +92,7 @@ public class Extinguisher : MonoBehaviour
                 extinguisherCloud.Stop(true, ParticleSystemStopBehavior.StopEmitting);
             }
             fireSpawned = false;
+            colliders.SetActive(false);
         }
     }
 

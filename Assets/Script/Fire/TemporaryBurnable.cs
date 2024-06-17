@@ -79,8 +79,6 @@ public class TemporaryBurnable : MonoBehaviour
 
         Invoke("StartRain", _timeBeforRain);
     }
-
-
     private void StartRain()
     {
         _rain.StartRain();
