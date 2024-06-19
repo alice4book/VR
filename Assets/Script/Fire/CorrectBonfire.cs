@@ -17,6 +17,7 @@ public class CorrectBonfire : MonoBehaviour
     [Tooltip("How many objects needs to be in bonfire")]
     private List<int> _listOfValues;
 
+    [SerializeField]
     private List<GameObject> _objests;
 
     [SerializeField]
@@ -51,6 +52,7 @@ public class CorrectBonfire : MonoBehaviour
         {
             _listOfCurrentObj[other.gameObject.tag] = 1;
         }
+        _objests.Add(other.gameObject);
         if (CheckCompletion())
         {
             _particleSystem.Play();
@@ -63,6 +65,7 @@ public class CorrectBonfire : MonoBehaviour
         if (_listOfCurrentObj.ContainsKey(other.gameObject.tag))
         {
             _listOfCurrentObj[other.gameObject.tag]--;
+            _objests.Remove(other.gameObject);
         }
     }
 
@@ -87,11 +90,15 @@ public class CorrectBonfire : MonoBehaviour
 
         foreach(var obj in _objests)
         {
-            var burnable = obj.GetComponent<Burnable>();
-            if (burnable == null)
-                return false;
-            if(!burnable._isBurning)
-                return false;
+            Burnable burnable = obj.GetComponent<Burnable>();
+            if (burnable != null)
+            {
+                if (!burnable._isBurning)
+                {
+                    Debug.Log("!burnable._isBurning");
+                    return false;
+                }
+            }
         }
 
         // All keys found with equal or higher values

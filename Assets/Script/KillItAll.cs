@@ -7,6 +7,6 @@ public class KillItAll : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        DestroyImmediate(other.gameObject);
+        Destroy(other.gameObject);
     }
 }
