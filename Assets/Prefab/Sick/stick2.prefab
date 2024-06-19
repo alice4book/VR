@@ -87,6 +87,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89f883f51cb06ef40b2fef650107b036, type: 3}
       insertIndex: -1
       addedObject: {fileID: 630284558667377620}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 89f883f51cb06ef40b2fef650107b036, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 231134884858778803}
   m_SourcePrefab: {fileID: 100100000, guid: 89f883f51cb06ef40b2fef650107b036, type: 3}
 --- !u!4 &505770756205288290 stripped
 Transform:
@@ -175,10 +178,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 231134884858778803}
+        m_TargetAssemblyTypeName: HandColor, Assembly-CSharp
+        m_MethodName: ChangeColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 231134884858778803}
+        m_TargetAssemblyTypeName: HandColor, Assembly-CSharp
+        m_MethodName: RevertColor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -313,6 +340,20 @@ MonoBehaviour:
   _burnable: {fileID: 4788275344513706278}
   _XRGrab: {fileID: 7698905840639587236}
   _canHoldAlways: 1
+--- !u!114 &231134884858778803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886940288211599832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffaffed9db9d59c44b6d4c72c8013b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 3637b758ff163493f8bb8b6d7e96d7ae, type: 2}
+  burnable: {fileID: 4788275344513706278}
 --- !u!1001 &9032583080384257701
 PrefabInstance:
   m_ObjectHideFlags: 0
