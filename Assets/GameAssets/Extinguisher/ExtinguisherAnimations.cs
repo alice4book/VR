@@ -12,6 +12,8 @@ public class ExtinguisherAnimations : MonoBehaviour
     private int pressHandle;
     private int releaseHandle;
 
+    [SerializeField] private float time = 0.2f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,21 +27,21 @@ public class ExtinguisherAnimations : MonoBehaviour
 
     public void IdleNotPressed() 
     {
-        animator.Play(idleNotPressed,0,0);
+        animator.CrossFade(idleNotPressed, time);
     }
 
     public void IdlePressed() 
     {
-        animator.Play(idlePressed,0,0);
+        animator.CrossFade(idlePressed, time);
     }
 
     public void PressHandle() 
     {
-       animator.Play(pressHandle,0,0);
+       animator.CrossFade(pressHandle, time);
     }
 
     public void ReleaseHandle() 
     {
-        animator.Play(releaseHandle,0,0);
+        animator.CrossFade(releaseHandle, time);
     }
 }
