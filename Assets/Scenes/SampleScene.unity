@@ -21618,6 +21618,30 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5396429863109717553, guid: 6ad4efd1524b88f448939cda5b6546d5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396429863109717553, guid: 6ad4efd1524b88f448939cda5b6546d5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396429863109717553, guid: 6ad4efd1524b88f448939cda5b6546d5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396429863109717553, guid: 6ad4efd1524b88f448939cda5b6546d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396429863109717553, guid: 6ad4efd1524b88f448939cda5b6546d5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6712862834349361004, guid: 6ad4efd1524b88f448939cda5b6546d5, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28116,9 +28140,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 871112431455647705, guid: cec2c64c29529b04db03142f37a92366, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260058686640019198, guid: cec2c64c29529b04db03142f37a92366, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7315495625188618995, guid: cec2c64c29529b04db03142f37a92366, type: 3}
       propertyPath: m_Name
       value: flintSaw
+      objectReference: {fileID: 0}
+    - target: {fileID: 7315495625188618995, guid: cec2c64c29529b04db03142f37a92366, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7591424396287277000, guid: cec2c64c29529b04db03142f37a92366, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7591424396287277000, guid: cec2c64c29529b04db03142f37a92366, type: 3}
       propertyPath: m_CollisionDetection
@@ -28178,6 +28218,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7984332587893712969, guid: cec2c64c29529b04db03142f37a92366, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9116729249701892902, guid: cec2c64c29529b04db03142f37a92366, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
