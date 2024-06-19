@@ -18,9 +18,9 @@ public class Burnable : MonoBehaviour
     [SerializeField]
     private Collider _detectingCapsule;
 
-    [Tooltip("The percentage of fire consumption")]
-    [Range(1.0f, 100.0f)]
-    public float percentage;
+    //[Tooltip("The percentage of fire consumption")]
+    //[Range(1.0f, 100.0f)]
+    //public float percentage;
 
     [Tooltip("Scale when fire starts burning")]
     [SerializeField]
@@ -54,6 +54,20 @@ public class Burnable : MonoBehaviour
     [SerializeField]
     private FireSize fireSize;
 
+    [Tooltip("Fire's HP")]
+    [SerializeField]
+    private int _HP;
+
+    [Tooltip("Default fire's HP")]
+    [SerializeField]
+    private int _defaultHP;
+
+    [SerializeField]
+    private bool _isInFire;
+
+    // Add to that when you wanna do something when object starts burning
+    public delegate void BurningDelegate();
+    public static event BurningDelegate OnBurningDelegate;
 
     private void Awake()
     {
@@ -66,9 +80,10 @@ public class Burnable : MonoBehaviour
         {
             _detectingCapsule.enabled = true;
         }
+        _defaultHP = _HP;
     }
 
-
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (!_isBurning)
@@ -78,18 +93,53 @@ public class Burnable : MonoBehaviour
             if (otherBurnable != null && otherBurnable._isBurning)
             {
                 StartBurning(hitPoint);
+                OnBurningDelegate?.Invoke();
                 return;
             }
             Lighter lighter = other.gameObject.GetComponent<Lighter>();
             if (lighter != null && lighter.fireSpawned)
             {
                 StartBurning(hitPoint);
+                OnBurningDelegate?.Invoke();
                 return;
             }
             else
             if (other.gameObject.tag == "FireStarter")
             {
                 StartBurning(hitPoint);
+                OnBurningDelegate?.Invoke();
+            }
+        }
+        else
+        if (_isBurning)
+        {
+            if (other.transform.gameObject.tag == "ExtinguisherClouds")
+            {
+                StopBurning();
+            }
+        }
+    }
+    */
+
+    // Can be little to much for VR
+    private void OnTriggerStay(Collider other)
+    {
+        if (!_isBurning)
+        {
+            Vector3 hitPoint = HitCalculation(other, _detectingCapsule);
+            Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
+            Lighter lighter = other.gameObject.GetComponent<Lighter>();
+            if ((lighter != null && lighter.fireSpawned) || (otherBurnable != null && otherBurnable._isBurning) || (other.gameObject.tag == "FireStarter"))
+            {
+                if (!_isInFire)
+                {
+                    StartCoroutine(LoseHP());
+                }
+                if (_HP <= 0)
+                {
+                    StartBurning(hitPoint);
+                    OnBurningDelegate?.Invoke();
+                }
             }
         }
         else
@@ -102,45 +152,13 @@ public class Burnable : MonoBehaviour
         }
     }
 
-    // Can be little to much for VR
-    private void OnTriggerStay(Collider other)
-    {
-        if (!_isBurning)
-        {
-            Vector3 hitPoint = HitCalculation(other, _detectingCapsule);
-            Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
-            if (otherBurnable != null && otherBurnable._isBurning)
-            {
-                StartBurning(hitPoint);
-                return;
-            }
-            Lighter lighter = other.gameObject.GetComponent<Lighter>();
-            if (lighter != null && lighter.fireSpawned)
-            {
-                StartBurning(hitPoint);
-                return;
-            }
-            else
-            if (other.gameObject.tag == "FireStarter")
-            {
-                StartBurning(hitPoint);
-            }
-        }
-        else
-        if (_isBurning)
-        {
-            if (other.transform.gameObject.tag == "ExtinguisherClouds")
-            {
-                StopBurning();
-            }
-        }
-    }
     private void OnValidate()
     {
         if (_isBurning)
         {
             //Debug.Log("Start burning");
             StartBurning(transform.position);
+            OnBurningDelegate?.Invoke();
         }
         else
         {
@@ -148,6 +166,7 @@ public class Burnable : MonoBehaviour
             StopBurning();
         }
     }
+
     IEnumerator ScaleOverTime()
     {
         // Optional delay
@@ -207,6 +226,15 @@ public class Burnable : MonoBehaviour
         this.transform.localPosition = _defaultPosition;
         StopAllCoroutines();
         fireSize.StopAll();
+        _HP = _defaultHP;
+    }
+
+    IEnumerator LoseHP()
+    {
+        _isInFire = true;
+        _HP--;
+        yield return new WaitForSeconds(0.01f);
+        _isInFire = false;
     }
 
     private Vector3 HitCalculation(Collider a, Collider b)
