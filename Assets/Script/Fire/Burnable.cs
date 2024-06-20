@@ -138,7 +138,6 @@ public class Burnable : MonoBehaviour
                 if (_HP <= 0)
                 {
                     StartBurning(hitPoint);
-                    OnBurningDelegate?.Invoke();
                 }
             }
         }
@@ -152,13 +151,13 @@ public class Burnable : MonoBehaviour
         }
     }
 
+    
     private void OnValidate()
     {
         if (_isBurning)
         {
             //Debug.Log("Start burning");
             StartBurning(transform.position);
-            OnBurningDelegate?.Invoke();
         }
         else
         {
@@ -166,7 +165,7 @@ public class Burnable : MonoBehaviour
             StopBurning();
         }
     }
-
+    
     IEnumerator ScaleOverTime()
     {
         // Optional delay

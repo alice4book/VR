@@ -14574,7 +14574,6 @@ MonoBehaviour:
   _isBurning: 1
   _burningCapsule: {fileID: 4753065803983070957}
   _detectingCapsule: {fileID: 4521930797632653696}
-  percentage: 0
   _startScale: {x: 0, y: 0, z: 0}
   _endScale: {x: 0, y: 0, z: 0}
   _startPosition: {x: 0, y: 0, z: 0.0026896538}
@@ -14583,6 +14582,9 @@ MonoBehaviour:
   _duration: 4
   _delay: 0
   fireSize: {fileID: 4960908529389387902}
+  _HP: 1
+  _defaultHP: 1
+  _isInFire: 0
 --- !u!136 &4753065803983070957
 CapsuleCollider:
   m_ObjectHideFlags: 0
