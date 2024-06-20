@@ -80,7 +80,7 @@ MonoBehaviour:
   objectPrefab: {fileID: 1244798672475073566, guid: 86c22746e488c464c899f6d188b46556, type: 3}
   spawnSpot: {fileID: 4852528116168543640}
   parentOfMushrooms: {fileID: 0}
-  delay: 2
+  delay: 20
 --- !u!65 &2217181846857769192
 BoxCollider:
   m_ObjectHideFlags: 0

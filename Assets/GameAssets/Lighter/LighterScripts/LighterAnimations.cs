@@ -13,6 +13,8 @@ public class LighterAnimations : MonoBehaviour
     private int idleOpen;
     private int idleClosed;
 
+    [SerializeField] private float time = 0.2f;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -27,12 +29,12 @@ public class LighterAnimations : MonoBehaviour
 
     public void OpenLid() 
     {
-        animator.Play(openLid,0,0);
+        animator.CrossFade(openLid,time);
     }
 
     public void CloseLid() 
     {
-        animator.Play(closeLid,0,0);
+        animator.CrossFade(closeLid,time);
     }
 
     public void TurnWheel() 
@@ -42,12 +44,12 @@ public class LighterAnimations : MonoBehaviour
 
     public void IdleOpen() 
     {
-        animator.Play(idleOpen,0,0);
+        animator.CrossFade(idleOpen,time);
     }
 
     public void IdleClosed() 
     {
-        animator.Play(idleClosed,0,0);
+        animator.CrossFade(idleClosed,time);
     }
 
 
