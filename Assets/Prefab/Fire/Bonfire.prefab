@@ -14529,7 +14529,7 @@ Transform:
   m_GameObject: {fileID: 7063220421966822012}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0026896538}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0026999991}
   m_LocalScale: {x: 0.01, y: 0, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -14555,9 +14555,9 @@ MonoBehaviour:
   _glow: {fileID: 0}
   _crackingFireNoise: {fileID: 0}
   size: 0
-  lenght_x: 0
-  lenght_y: 0
-  lenght_z: 0
+  lenght_x: 1
+  lenght_y: 1
+  lenght_z: 1
   _startingEmissionRate: 10
 --- !u!114 &4551293667268228995
 MonoBehaviour:
@@ -14572,11 +14572,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _isBurning: 1
-  _burningCapsule: {fileID: 4753065803983070957}
-  _detectingCapsule: {fileID: 4521930797632653696}
-  _startScale: {x: 0, y: 0, z: 0}
+  _burningCollideres:
+  - {fileID: 4753065803983070957}
+  _detectingCollideres:
+  - {fileID: 4521930797632653696}
+  _startScale: {x: 1, y: 1, z: 1}
   _endScale: {x: 0, y: 0, z: 0}
-  _startPosition: {x: 0, y: 0, z: 0.0026896538}
+  _startPosition: {x: 0, y: 0, z: 0.0026999991}
   _endPosition: {x: 0, y: 0, z: 0.0027}
   _defaultPosition: {x: 0, y: 0, z: 0}
   _duration: 4
@@ -14605,7 +14607,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.001
-  m_Height: 0
+  m_Height: 0.0002
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &4521930797632653696

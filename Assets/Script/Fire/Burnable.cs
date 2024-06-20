@@ -1,22 +1,23 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Burnable : MonoBehaviour
 {
     public event Action OnStartBurning;
     public event Action OnStopBurning;
-
+    
     [Tooltip("Is object burning")]
     public bool _isBurning;
 
     [Tooltip("Collider when object is burning")]
     [SerializeField]
-    private Collider _burningCapsule;
+    private List<Collider> _burningCollideres;
 
     [Tooltip("Collider when object is NOT burning")]
     [SerializeField]
-    private Collider _detectingCapsule;
+    private List<Collider> _detectingCollideres;
 
     //[Tooltip("The percentage of fire consumption")]
     //[Range(1.0f, 100.0f)]
@@ -72,13 +73,21 @@ public class Burnable : MonoBehaviour
     private void Awake()
     {
         _isBurning = false;
-        if(_burningCapsule != null)
+        foreach(var collider in _burningCollideres)
         {
-            _burningCapsule.enabled = false;
+            if(collider != null)
+            {
+                collider.enabled = false;
+            }
         }
-        if (_detectingCapsule != null)
+
+
+        foreach (var collider in _detectingCollideres)
         {
-            _detectingCapsule.enabled = true;
+            if (collider != null)
+            {
+                collider.enabled = true;
+            }
         }
         _defaultHP = _HP;
     }
@@ -126,7 +135,17 @@ public class Burnable : MonoBehaviour
     {
         if (!_isBurning)
         {
-            Vector3 hitPoint = HitCalculation(other, _detectingCapsule);
+            Vector3 hitPoint = Vector3.zero;
+            float shortestDistance = float.MaxValue;
+            foreach (var collider in _detectingCollideres)
+            {
+                Vector3 tmpHitPoint = HitCalculation(other, collider);
+                float distance = Vector3.Distance(tmpHitPoint, other.gameObject.transform.position);
+                if (distance < shortestDistance){
+                    hitPoint = tmpHitPoint;
+                    shortestDistance = distance;
+                }
+            }
             Burnable otherBurnable = other.gameObject.GetComponent<Burnable>();
             Lighter lighter = other.gameObject.GetComponent<Lighter>();
             if ((lighter != null && lighter.fireSpawned) || (otherBurnable != null && otherBurnable._isBurning) || (other.gameObject.tag == "FireStarter"))
@@ -184,9 +203,12 @@ public class Burnable : MonoBehaviour
             fireSize.lenght_y = scaleValues.y;
             fireSize.lenght_z = scaleValues.z;
             // Settings for capsule
-            CapsuleCollider capsuleCollider = (CapsuleCollider)_burningCapsule;
-            if(capsuleCollider != null)
-                capsuleCollider.height = scaleValues.y * 0.0002f;
+            foreach (var collider in _burningCollideres)
+            {
+                CapsuleCollider capsuleCollider = (CapsuleCollider)collider;
+                if (capsuleCollider != null)
+                    capsuleCollider.height = scaleValues.y * 0.0002f;
+            }
 
             fireSize.UpdateValues();
             Vector3 posValues = Vector3.Lerp(_startPosition, _endPosition, elapsedTime / _duration);
@@ -207,10 +229,20 @@ public class Burnable : MonoBehaviour
         _startPosition = newPos;
         _isBurning = true;
         OnStartBurning?.Invoke();
-        if (_burningCapsule != null)
-            _burningCapsule.enabled = true;
-        if (_detectingCapsule != null)
-            _detectingCapsule.enabled = false;
+        foreach (var collider in _burningCollideres)
+        {
+            if (collider != null)
+            {
+                collider.enabled = true;
+            }
+        }
+        foreach (var collider in _detectingCollideres)
+        {
+            if (collider != null)
+            {
+                collider.enabled = false;
+            }
+        }
 
         fireSize.StartAll();
         StartCoroutine(ScaleOverTime());
@@ -221,10 +253,20 @@ public class Burnable : MonoBehaviour
         _isBurning = false;
         OnStopBurning?.Invoke();
         fireSize.ResetValues();
-        if (_burningCapsule != null)
-            _burningCapsule.enabled = false;
-        if (_detectingCapsule != null)
-            _detectingCapsule.enabled = true;
+        foreach (var collider in _burningCollideres)
+        {
+            if (collider != null)
+            {
+                collider.enabled = false;
+            }
+        }
+        foreach (var collider in _detectingCollideres)
+        {
+            if (collider != null)
+            {
+                collider.enabled = true;
+            }
+        }
         this.transform.localPosition = _defaultPosition;
         StopAllCoroutines();
         fireSize.StopAll();
