@@ -11,6 +11,7 @@ TagManager:
   - FireStarter
   - Stick
   - Food
+  - Moss
   layers:
   - Default
   - TransparentFX
