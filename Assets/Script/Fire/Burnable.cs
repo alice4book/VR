@@ -12,7 +12,7 @@ public class Burnable : MonoBehaviour
 
     [Tooltip("Collider when object is burning")]
     [SerializeField]
-    private CapsuleCollider _burningCapsule;
+    private Collider _burningCapsule;
 
     [Tooltip("Collider when object is NOT burning")]
     [SerializeField]
@@ -183,7 +183,10 @@ public class Burnable : MonoBehaviour
             fireSize.lenght_x = scaleValues.x;
             fireSize.lenght_y = scaleValues.y;
             fireSize.lenght_z = scaleValues.z;
-            _burningCapsule.height = scaleValues.y * 0.0002f;
+            // Settings for capsule
+            CapsuleCollider capsuleCollider = (CapsuleCollider)_burningCapsule;
+            if(capsuleCollider != null)
+                capsuleCollider.height = scaleValues.y * 0.0002f;
 
             fireSize.UpdateValues();
             Vector3 posValues = Vector3.Lerp(_startPosition, _endPosition, elapsedTime / _duration);
