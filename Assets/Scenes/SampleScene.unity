@@ -12163,6 +12163,79 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 4ed41858240845b479082276b0831228, type: 3}
   m_PrefabInstance: {fileID: 562182281}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &591523890
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1457097845095953674, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.216
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217181846857769192, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_Size.x
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2217181846857769192, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_Size.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5026252883890261371, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: parentOfMushrooms
+      value: 
+      objectReference: {fileID: 1303899180}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.529
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453169772562162469, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_Name
+      value: MushroomSpawner
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
 --- !u!1 &602859959
 GameObject:
   m_ObjectHideFlags: 0
@@ -25983,6 +26056,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1296920724}
   m_CullTransparentMesh: 1
+--- !u!1 &1303899180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1303899181}
+  m_Layer: 0
+  m_Name: SpawnedMushrooms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1303899181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303899180}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4236145, y: -2.214272, z: 16.42892}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1307655359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27173,6 +27277,71 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6345562874480820532, guid: e1f0d4bc2d67ddb4295e73f51f3ca4f7, type: 3}
   m_PrefabInstance: {fileID: 427008753}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1417139490
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5026252883890261371, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: objectPrefab
+      value: 
+      objectReference: {fileID: 7219877818830507559, guid: 474851b6558bcee419ed89f95987f7c8, type: 3}
+    - target: {fileID: 5026252883890261371, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: parentOfMushrooms
+      value: 
+      objectReference: {fileID: 1303899180}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.537
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.577
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 18.199373
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7321347594954716818, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453169772562162469, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
+      propertyPath: m_Name
+      value: MushroomSpawner (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 75b0f00631cd7c84082be245f383a1ef, type: 3}
 --- !u!1 &1419460409
 GameObject:
   m_ObjectHideFlags: 0
@@ -39383,3 +39552,6 @@ SceneRoots:
   - {fileID: 168897766}
   - {fileID: 905559069}
   - {fileID: 1165544}
+  - {fileID: 591523890}
+  - {fileID: 1417139490}
+  - {fileID: 1303899181}
