@@ -17,7 +17,7 @@ public class Lighter : MonoBehaviour
 
     private LighterAnimations animations;
 
-    public bool debugFire;
+    //public bool debugFire;
 
     public void FireOn()
     {
@@ -40,13 +40,14 @@ public class Lighter : MonoBehaviour
     void Start() {
 
         animations = GetComponent<LighterAnimations>();
-        debugFire = false;
+        //debugFire = false;
         //animations.OpenLid();
 
         //firePrefab.transform.localScale = new Vector3(0.1f,0.1f,0.1f);
         //GameObject newObject = Instantiate(firePrefab, firePoint.position, firePoint.rotation, this.transform);
     }
 
+    /*
     private void OnValidate()
     {
         if (debugFire)
@@ -54,6 +55,6 @@ public class Lighter : MonoBehaviour
         else 
             FireOff();
     }
-
+    */
 
 }
