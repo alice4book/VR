@@ -49,7 +49,7 @@ public class MenuSign : MonoBehaviour
 
     void Level2()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level2");
     }
 
     void Quit()
