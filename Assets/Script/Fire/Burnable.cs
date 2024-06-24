@@ -221,6 +221,11 @@ public class Burnable : MonoBehaviour
 
     public void StartBurning(Vector3 hitPoint)
     {
+        if (!gameObject.activeInHierarchy)
+        {
+            return;
+        }
+
         transform.position = hitPoint;
         Vector3 newPos = transform.localPosition;
         newPos.y = 0f;
