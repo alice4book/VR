@@ -8550,7 +8550,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3571892646786690921, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: m_Height
-      value: 0.0000003340721
+      value: 0.00000075687166
       objectReference: {fileID: 0}
     - target: {fileID: 3800775699414813178, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: size
@@ -8618,7 +8618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980778372692824383, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0027000015
+      value: 0.002700003
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32283,7 +32283,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 315109426813084752, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 315109426813084752, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
+      propertyPath: m_LineLength
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 442906098434447936, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_Enabled
@@ -32514,12 +32518,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2607312474088619353, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
+      propertyPath: m_UseForceGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2607312474088619353, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
+      propertyPath: m_AllowAnchorControl
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2607312474088619353, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_MaxRaycastDistance
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2853412522427425234, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853412522427425234, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
+      propertyPath: m_UseForceGrab
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853412522427425234, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
+      propertyPath: m_AllowAnchorControl
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2853412522427425234, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
+      propertyPath: m_MaxRaycastDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2871854915733156393, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_BackGroundColor.a
@@ -32559,7 +32583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3083712949795922327, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3255154722062680797, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_IsActive
@@ -32651,7 +32675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6396743587534923916, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6589785594443461639, guid: 65eb6b98091a5734ba9d9ca871cef69a, type: 3}
       propertyPath: m_IsActive
