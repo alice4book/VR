@@ -26,6 +26,10 @@ public class CorrectBonfire : MonoBehaviour
     [SerializeField]
     private FireSize _fireSize;
 
+    private Collider _triggerCollider;
+
+    private SpawnSignToNextLevel _spawnSignToNextLevel;
+
     private void Awake()
     {
         if (_listOfObj.Count != _listOfValues.Count)
@@ -42,6 +46,14 @@ public class CorrectBonfire : MonoBehaviour
             _listForComplition[_listOfObj[i]] = _listOfValues[i];
         }
     }
+
+    void Start()
+    {
+        // Get the collider component attached to the same GameObject
+        _triggerCollider = GetComponent<Collider>();
+        _spawnSignToNextLevel = GetComponent<SpawnSignToNextLevel>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (_listOfCurrentObj.ContainsKey(other.gameObject.tag))
@@ -57,6 +69,7 @@ public class CorrectBonfire : MonoBehaviour
         {
             _particleSystem.Play();
             _fireSize.StartAll();
+            _spawnSignToNextLevel.SpawnSignToLevel();
         }
     }
 
@@ -103,5 +116,23 @@ public class CorrectBonfire : MonoBehaviour
 
         // All keys found with equal or higher values
         return true;
+    }
+
+    public bool IsObjectInsideTrigger(GameObject obj)
+    {
+        if (_triggerCollider == null)
+        {
+            Debug.LogError("Trigger collider is not assigned.");
+            return false;
+        }
+
+        // Get the bounds of the trigger collider
+        Bounds triggerBounds = _triggerCollider.bounds;
+
+        // Get the position of the object to check
+        Vector3 objPosition = obj.transform.position;
+
+        // Check if the object's position is within the bounds of the trigger collider
+        return triggerBounds.Contains(objPosition);
     }
 }
