@@ -32,8 +32,6 @@ public class FlintBehavior : MonoBehaviour
     [SerializeField]
     private Vector3 _startingPos;
 
-    bool _bIsTriggeredOnce = false;
-
 
     private void Awake()
     {
@@ -47,7 +45,6 @@ public class FlintBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Flint")
         {
-            _bIsTriggeredOnce = false;
             _startingPos = HitCalculation(collision, _boxCollider);
             StartCoroutine(WaitNextFrame(collision));
         }
@@ -56,7 +53,6 @@ public class FlintBehavior : MonoBehaviour
     IEnumerator WaitNextFrame(Collider collision)
     {
         yield return 0;
-        _bIsTriggeredOnce = true;
         _triesCount++;
         _igniteChance = Random.Range(_minChance, 101);
         if (_igniteChance > 75)

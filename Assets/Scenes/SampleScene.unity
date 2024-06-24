@@ -8550,7 +8550,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3571892646786690921, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: m_Height
-      value: 0.0000003340721
+      value: 0.00011604912
       objectReference: {fileID: 0}
     - target: {fileID: 3800775699414813178, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: size
@@ -8618,7 +8618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980778372692824383, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0027000015
+      value: 0.0027004676
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9940,7 +9940,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1244798672475073566, guid: 86c22746e488c464c899f6d188b46556, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 896200700}
   m_SourcePrefab: {fileID: 100100000, guid: 86c22746e488c464c899f6d188b46556, type: 3}
 --- !u!1 &408253258
 GameObject:
@@ -21515,6 +21518,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894369180}
   m_CullTransparentMesh: 1
+--- !u!1 &896200699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1244798672475073566, guid: 86c22746e488c464c899f6d188b46556, type: 3}
+  m_PrefabInstance: {fileID: 396830867}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &896200700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896200699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0ec53bf48879d4e93a0e76025df978, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dispalySeconds: 3
+  _fullScreen: {fileID: 643573109285610638, guid: 53a413327819a984d8ab1618c9e90a10, type: 2}
+  _material: {fileID: 2100000, guid: d2039aad1b6ee914ca1b6181c863e857, type: 2}
+  _bMushroomEffectOn: 0
 --- !u!1 &896662536
 GameObject:
   m_ObjectHideFlags: 0
