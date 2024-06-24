@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,11 +8,14 @@ public class NextLevelScene : MonoBehaviour
 {
     [SerializeField] private Burnable _burnable;
     [SerializeField] private string _name;
+    [SerializeField] private TextMeshProUGUI _textMesh;
     [SerializeField] private float _deleyTime = 2.0f;
 
     public void SetName(string name)
     {
         _name = name;
+        if(_textMesh)
+            _textMesh.text = name;
     }
 
     private void Start()

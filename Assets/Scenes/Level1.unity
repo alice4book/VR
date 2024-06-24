@@ -11438,7 +11438,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3571892646786690921, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: m_Height
-      value: 0.00000080077643
+      value: 0.0000016158699
       objectReference: {fileID: 0}
     - target: {fileID: 3800775699414813178, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: lenght_x
@@ -11498,7 +11498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980778372692824383, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0026999994
+      value: 0.002699999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36584,9 +36584,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5786599690276995863, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
+      propertyPath: _listOfScripts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5786599690276995863, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
       propertyPath: _listOfValues.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5786599690276995863, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
+      propertyPath: _listOfScripts.Array.data[0]
+      value: 
+      objectReference: {fileID: 549399010843548841}
     - target: {fileID: 6343864524010518728, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -36658,8 +36666,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 184810881055140899, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 549399010843548841}
   m_SourcePrefab: {fileID: 100100000, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
+--- !u!1 &549399010843548840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 184810881055140899, guid: 0c653e23af7c95944a535cee2226adb6, type: 3}
+  m_PrefabInstance: {fileID: 549399010843548839}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &549399010843548841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549399010843548840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeef16425d23d36439aac85b496e9b1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listOfTags:
+  - Stick
+  - Moss
+  _listOfValues: 0800000001000000
+  _objests: []
 --- !u!1 &875576289324360096
 GameObject:
   m_ObjectHideFlags: 0
