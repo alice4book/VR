@@ -7,8 +7,12 @@ public class RainWhenHeld : MonoBehaviour
     [SerializeField]
     private ParticleSystem _particleSystem;
 
+    [SerializeField] private GameObject _colliderGameObject;
+
     [SerializeField] 
     private BoxCollider _collider;
+
+    private Quaternion _initialRotation;
 
     private void Start()
     {
@@ -16,6 +20,7 @@ public class RainWhenHeld : MonoBehaviour
             _particleSystem.Stop();
         if(_collider != null)
             _collider.enabled = false;
+        _initialRotation = _colliderGameObject.transform.rotation;
     }
 
     public void isHeld()
@@ -32,5 +37,14 @@ public class RainWhenHeld : MonoBehaviour
             _particleSystem.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         if (_collider != null)
             _collider.enabled = false;
+    }
+
+    void LateUpdate()
+    {
+        if (_collider != null)
+        {
+            // Lock the object's rotation to the initial world rotation
+            _colliderGameObject.transform.rotation = _initialRotation;
+        }
     }
 }
