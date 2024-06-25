@@ -24,6 +24,12 @@ public class FullScreenController : MonoBehaviour
         _bMushroomEffectOn = false;
     }
 
+    private void OnValidate()
+    {
+        if (_bMushroomEffectOn)
+            StartCoroutine(Mushroom());
+    }
+
     public void StartEffect()
     {
         if(!_bMushroomEffectOn)
