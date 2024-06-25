@@ -6,6 +6,7 @@ public class EatingBehaviour : MonoBehaviour
 {
     [SerializeField] private AudioSource _eating;
     [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private FullScreenController _fullScreen;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,8 +20,10 @@ public class EatingBehaviour : MonoBehaviour
 
     private void Eating(GameObject gameObj)
     {
-        Destroy(gameObj);
         _eating.Play();
         _particleSystem.Play();
+        if (gameObj.GetComponent<Mushroom>() != null && gameObj.GetComponent<Mushroom>().changeColor && _fullScreen != null)
+            _fullScreen.StartEffect();   
+        Destroy(gameObj); 
     }
 }

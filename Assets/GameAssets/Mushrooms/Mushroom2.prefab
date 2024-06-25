@@ -124,7 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7990262d302436d46acc8ebf7d709c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mushroomColor: {r: 0.00005531311, g: 0, b: 1, a: 0}
+  mushroomColor: {r: 0.67058825, g: 0, b: 1, a: 0}
+  changeColor: 1
 --- !u!65 &6916617634912620928
 BoxCollider:
   m_ObjectHideFlags: 0

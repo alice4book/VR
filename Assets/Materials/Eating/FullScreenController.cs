@@ -8,7 +8,9 @@ public class FullScreenController : MonoBehaviour
 {
     [Header("Parameters")]
     [SerializeField]
-    private float _dispalySeconds;
+    private float _dispalyTransitionSeconds;
+    [SerializeField]
+    private float _dispalyShowSeconds;
 
     [Header("References")]
     [SerializeField] private ScriptableRendererFeature _fullScreen;
@@ -16,43 +18,48 @@ public class FullScreenController : MonoBehaviour
 
     [SerializeField] bool _bMushroomEffectOn;
 
-    private int _intensity = Shader.PropertyToID("_intensity");
-
     private void Start()
     {
         _fullScreen.SetActive(false);
         _bMushroomEffectOn = false;
     }
 
-    private void OnValidate()
+    public void StartEffect()
     {
-        if (_bMushroomEffectOn)
-        {
+        if(!_bMushroomEffectOn)
             StartCoroutine(Mushroom());
-        }
-         
     }
 
     private IEnumerator Mushroom()
     {
         _fullScreen.SetActive(true);
-        // set varibles
-
-        yield return new WaitForSeconds(_dispalySeconds);
-
+        _bMushroomEffectOn = true;
+        bool up = true;
         float elapsedTime = 0.0f;
-
-        while (elapsedTime < _dispalySeconds)
+        float lerpedIntensity = 0.0f;
+        while (elapsedTime < _dispalyTransitionSeconds)
         {
             elapsedTime += Time.deltaTime;
 
-            // change varibles by time 
-            // lerp
-            // _material.SetFloat
+            if(up)
+                lerpedIntensity = Mathf.Lerp(0.0f, 1.0f, elapsedTime / (_dispalyTransitionSeconds * 0.5f));
+            else
+                lerpedIntensity = Mathf.Lerp(1.0f, 0.0f, elapsedTime / (_dispalyTransitionSeconds * 0.5f));
+            if (lerpedIntensity >= 1.0f)
+            {
+                yield return new WaitForSeconds(_dispalyShowSeconds);
+                lerpedIntensity = 1.0f;
+                up = false;
+                elapsedTime = 0.0f; // Reset elapsed time for decreasing phase
+            }
+            // Set the material's float property to change its intensity
+            _material.SetFloat("_Intensity", lerpedIntensity);
 
-            yield return null;
+            yield return new WaitForFixedUpdate();
         }
 
+        _bMushroomEffectOn = false;
         _fullScreen.SetActive(false);
+
     }
 }

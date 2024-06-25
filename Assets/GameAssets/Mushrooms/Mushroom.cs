@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mushroom : MonoBehaviour {
 
     [SerializeField] private Color mushroomColor;
+    public bool changeColor = false;
 
     private ParticleSystem[] particleSystems;
 
