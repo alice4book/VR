@@ -13,6 +13,8 @@ public class CorrectBonfire : MonoBehaviour
     [SerializeField]
     private FireSize _fireSize;
 
+    [SerializeField]
+    private bool _bSign = false;
     private SpawnSignToNextLevel _spawnSignToNextLevel;
 
 
@@ -28,11 +30,12 @@ public class CorrectBonfire : MonoBehaviour
 
     private void IsItReady()
     {
-        if (CheckCompletion())
+        if (CheckCompletion() && !_bSign)
         {
             _particleSystem.Play();
             _fireSize.StartAll();
             _spawnSignToNextLevel.SpawnSignToLevel();
+            _bSign = true;
         }
     }
 

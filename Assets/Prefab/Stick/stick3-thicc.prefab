@@ -275,10 +275,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3d5019bd85d09934898d7ac8dd55315b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7414bdc9260c9bf4db494021d3d64548, type: 2}
     - target: {fileID: -5754084199372789682, guid: 3d5019bd85d09934898d7ac8dd55315b, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -7819359555950345858, guid: 06e44e1f6e98728408ee0d925dda5869, type: 3}
+      objectReference: {fileID: 5842036393112879077, guid: b6d7113311ce7b849a529a136cdf4d45, type: 3}
     - target: {fileID: 919132149155446097, guid: 3d5019bd85d09934898d7ac8dd55315b, type: 3}
       propertyPath: m_Name
       value: stick3-thicc
