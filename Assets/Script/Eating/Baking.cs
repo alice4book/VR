@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Baking : MonoBehaviour
 {
-    public Color startColor = Color.white; // Starting color
-    public Color endColor = Color.red; // Target color
-    public float duration = 5.0f; // Duration of the color change
+    [SerializeField] private Color startColor = Color.white; // Starting color
+    [SerializeField] private Color endColor = Color.red; // Target color
+    [SerializeField] private float duration = 5.0f; // Duration of the color change
 
     private Renderer objectRenderer;
     private Coroutine colorChangeCoroutine;
-    private bool isChangingColor = false;
     private float timeElapsed;
+    private bool isChangingColor = false;
 
     void Start()
     {

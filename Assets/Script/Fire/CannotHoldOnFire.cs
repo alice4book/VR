@@ -14,7 +14,6 @@ public class CannotHoldOnFire : MonoBehaviour
     {
         if (_burnable != null)
         {
-            _burnable.OnStartBurning += CannotHold;
             _burnable.OnStopBurning += CanHold;
         }
     }
@@ -23,7 +22,6 @@ public class CannotHoldOnFire : MonoBehaviour
     {
         if (_burnable != null)
         {
-            _burnable.OnStartBurning -= CannotHold;
             _burnable.OnStopBurning -= CanHold;
         }
     }
@@ -33,11 +31,12 @@ public class CannotHoldOnFire : MonoBehaviour
         _XRGrab.enabled = true;
     }
 
-    private void CannotHold()
+    public void CannotHold()
     {
         if (_canHoldAlways)
             return;
         _XRGrab.enabled = false;
+        Invoke("CanHold", 0.2f);
     }
 
 }
