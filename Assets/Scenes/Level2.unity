@@ -7134,7 +7134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2084161653200563799, guid: 23701dd0040a9784a89dbcb036068c5c, type: 3}
       propertyPath: m_Height
-      value: 0.00000018017292
+      value: 0.00000085461136
       objectReference: {fileID: 0}
     - target: {fileID: 4650589462102695490, guid: 23701dd0040a9784a89dbcb036068c5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7182,7 +7182,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5899617458638262273, guid: 23701dd0040a9784a89dbcb036068c5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0026999998
+      value: 0.0026999994
       objectReference: {fileID: 0}
     - target: {fileID: 6841460344295720517, guid: 23701dd0040a9784a89dbcb036068c5c, type: 3}
       propertyPath: burnable
@@ -8639,7 +8639,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3571892646786690921, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: m_Height
-      value: 0.00000018017292
+      value: 0.00000085461136
       objectReference: {fileID: 0}
     - target: {fileID: 3800775699414813178, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: size
@@ -8707,7 +8707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8980778372692824383, guid: 4cb5c5451107c9341a070fa4355b391f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0027000008
+      value: 0.0027000036
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31402,6 +31402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eating: {fileID: 1743504590}
   _particleSystem: {fileID: 163196481}
+  _fullScreen: {fileID: 0}
 --- !u!82 &1743504590
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38651,7 +38652,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
       propertyPath: m_UseDynamicAttach
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3009740710989941006, guid: 992c036d173ca1646a4377fa8a24cb90, type: 3}
       propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size

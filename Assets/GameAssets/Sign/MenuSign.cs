@@ -44,7 +44,7 @@ public class MenuSign : MonoBehaviour
 
     void Level1()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Level1");
     }
 
     void Level2()
