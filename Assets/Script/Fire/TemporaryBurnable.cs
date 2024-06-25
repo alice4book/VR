@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TemporaryBurnable : MonoBehaviour
@@ -8,8 +9,8 @@ public class TemporaryBurnable : MonoBehaviour
     [SerializeField] 
     private Rain _rain;
 
-    [SerializeField] 
-    private MeshCollider _collider;
+    [SerializeField]
+    private List<Collider> _detectingCollideres;
 
     [SerializeField]
     [Tooltip("Is object burning")]
@@ -21,7 +22,6 @@ public class TemporaryBurnable : MonoBehaviour
 
     private void Start()
     {
-        _collider = GetComponent<MeshCollider>();
         _isBurning = false;
         
         GameObject rainObj = GameObject.FindWithTag("Rain");
@@ -32,12 +32,66 @@ public class TemporaryBurnable : MonoBehaviour
         _timeBeforRain = 1.5f;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if (!_isBurning)
         {
-            Debug.Log("Here");
-            GameObject bonfire = collision.gameObject.transform.GetChild(0).gameObject;
+            Vector3 hitPoint = Vector3.zero;
+            float shortestDistance = float.MaxValue;
+            foreach (var collider in _detectingCollideres)
+                {
+                    Vector3 tmpHitPoint = HitCalculation(other, collider);
+                    float distance = Vector3.Distance(tmpHitPoint, other.gameObject.transform.position);
+                    if (distance < shortestDistance)
+                    {
+                        hitPoint = tmpHitPoint;
+                        shortestDistance = distance;
+                    }
+                }
+            GameObject bonfire = other.gameObject;
+            if (bonfire != null)
+            {
+                Burnable otherBurnable = bonfire.GetComponent<Burnable>();
+                if (otherBurnable != null && otherBurnable._isBurning)
+                {
+                    StartBurning(hitPoint);
+                }
+                Lighter lighter = other.gameObject.GetComponent<Lighter>();
+                if (lighter != null && lighter.fireSpawned)
+                {
+                    StartBurning(hitPoint);
+                }
+                else
+                if (other.gameObject.tag == "FireStarter")
+                {
+                    StartBurning(hitPoint);
+                }
+            }
+        }
+    }
+
+    private Vector3 HitCalculation(Collider a, Collider b)
+    {
+        Vector3 direction;
+        float distance;
+
+        Physics.ComputePenetration(
+            a, a.transform.position, a.transform.rotation,
+            b, b.transform.position, b.transform.rotation,
+            out direction, out distance);
+
+        Vector3 hitPoint = a.transform.position + direction * distance;
+        return hitPoint;
+    }
+
+    /*
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Here");
+        if (!_isBurning)
+        {
+            //GameObject bonfire = collision.gameObject.transform.GetChild(0).gameObject;
+            GameObject bonfire = collision.gameObject.transform.parent.GetChild(0).gameObject;
             if(bonfire != null)
             {
                 Debug.Log("HereHere");
@@ -61,6 +115,7 @@ public class TemporaryBurnable : MonoBehaviour
             }
         }
     }
+    */
 
     private void StartBurning(Vector3 vec)
     {
