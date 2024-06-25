@@ -407,7 +407,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5485855436204391810}
         m_TargetAssemblyTypeName: HandColor, Assembly-CSharp
-        m_MethodName: ChangeColor
+        m_MethodName: IsBeingHeld
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -7,7 +7,8 @@ public class RainWhenHeld : MonoBehaviour
     [SerializeField]
     private ParticleSystem _particleSystem;
 
-    [SerializeField] private GameObject _colliderGameObject;
+    [SerializeField] 
+    private GameObject _colliderGameObject;
 
     [SerializeField] 
     private BoxCollider _collider;

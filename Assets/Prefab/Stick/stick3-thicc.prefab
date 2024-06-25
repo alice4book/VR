@@ -425,7 +425,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8102178311045171905}
         m_TargetAssemblyTypeName: HandColor, Assembly-CSharp
-        m_MethodName: ChangeColor
+        m_MethodName: IsBeingHeld
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -575,5 +575,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffaffed9db9d59c44b6d4c72c8013b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duration: 5
   material: {fileID: 2100000, guid: 3637b758ff163493f8bb8b6d7e96d7ae, type: 2}
   burnable: {fileID: 7117939610349787074}
+  _holdingController: {fileID: 0}
+  handColor: {r: 1, g: 1, b: 1, a: 1}
+  hotColor: {r: 1, g: 0, b: 0, a: 1}
+  currentColor: {r: 1, g: 0, b: 0, a: 1}
