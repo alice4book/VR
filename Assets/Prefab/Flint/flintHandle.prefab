@@ -5225,7 +5225,9 @@ MonoBehaviour:
   _minChance: 0
   _igniteChance: 0
   _capsuleCollider: {fileID: 5736562418262036153}
+  _boxCollider: {fileID: 0}
   _particleSystem: {fileID: 2809692429455731812}
+  _startingPos: {x: 0, y: 0, z: 0}
 --- !u!65 &6951227402076488222
 BoxCollider:
   m_ObjectHideFlags: 0
