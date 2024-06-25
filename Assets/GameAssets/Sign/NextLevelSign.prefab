@@ -603,6 +603,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _burnable: {fileID: 8428477852163685755}
   _name: Level2
+  _textMesh: {fileID: 0}
+  _deleyTime: 2
 --- !u!1 &9182196308961323340
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +725,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 920285749874956475, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.0027000012
+      value: 0.0027
       objectReference: {fileID: 0}
     - target: {fileID: 920285749874956475, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -753,17 +755,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4521930797632653696, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4551293667268228995, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: _startPosition.z
-      value: 0.002700025
+      value: 0.0027000012
       objectReference: {fileID: 0}
     - target: {fileID: 4753065803983070957, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_Height
-      value: 0.000009801519
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4753065803983070957, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
+      propertyPath: m_Radius
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4753065803983070957, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_Direction
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4960908529389387902, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: size
@@ -771,15 +781,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4960908529389387902, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: lenght_x
-      value: 0.049007595
+      value: 0.009273291
       objectReference: {fileID: 0}
     - target: {fileID: 4960908529389387902, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: lenght_y
-      value: 0.049007595
+      value: 0.009273291
       objectReference: {fileID: 0}
     - target: {fileID: 4960908529389387902, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: lenght_z
-      value: 0.049007595
+      value: 0.009273291
       objectReference: {fileID: 0}
     - target: {fileID: 7063220421966822012, guid: 7495632fa63e10149982b0837085ed9e, type: 3}
       propertyPath: m_Name

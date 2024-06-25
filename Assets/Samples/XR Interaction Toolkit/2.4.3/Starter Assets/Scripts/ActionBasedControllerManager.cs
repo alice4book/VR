@@ -258,13 +258,13 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         void OnRaySelectEntered(SelectEnterEventArgs args)
         {
             // Disable locomotion and turn actions
-            DisableLocomotionActions();
+            //DisableLocomotionActions();
         }
 
         void OnRaySelectExited(SelectExitEventArgs args)
         {
             // Re-enable the locomotion and turn actions
-            UpdateLocomotionActions();
+            //UpdateLocomotionActions();
         }
 
         void OnUIHoverEntered(UIHoverEventArgs args)
