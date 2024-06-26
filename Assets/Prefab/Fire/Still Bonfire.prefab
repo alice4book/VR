@@ -4845,7 +4845,7 @@ GameObject:
   - component: {fileID: 4121221273891035910}
   m_Layer: 0
   m_Name: Still Bonfire
-  m_TagString: Untagged
+  m_TagString: FireStarter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

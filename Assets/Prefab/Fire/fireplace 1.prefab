@@ -221,38 +221,38 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 4
       minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
-        key5: {r: 0, g: 0, b: 0, a: 0}
-        key6: {r: 0, g: 0, b: 0, a: 0}
-        key7: {r: 0, g: 0, b: 0, a: 0}
+        key1: {r: 1, g: 0, b: 0, a: 1}
+        key2: {r: 1, g: 0.89144254, b: 0.14117646, a: 1}
+        key3: {r: 0.31019327, g: 1, b: 0.27843142, a: 0}
+        key4: {r: 0.41176474, g: 1, b: 0.8816291, a: 0}
+        key5: {r: 0, g: 0.10007739, b: 1, a: 0}
+        key6: {r: 0.49497414, g: 0, b: 1, a: 0}
+        key7: {r: 1, g: 0, b: 0.5240264, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
-        ctime3: 0
-        ctime4: 0
-        ctime5: 0
-        ctime6: 0
-        ctime7: 0
+        ctime1: 6554
+        ctime2: 14842
+        ctime3: 23901
+        ctime4: 33153
+        ctime5: 44333
+        ctime6: 53199
+        ctime7: 65535
         atime0: 0
         atime1: 65535
-        atime2: 0
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_ColorSpace: -1
-        m_NumColorKeys: 2
+        m_ColorSpace: 0
+        m_NumColorKeys: 8
         m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 150
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1366,24 +1366,24 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.9811321, g: 0.96350884, b: 0.51370597, a: 1}
-        key1: {r: 1, g: 0.8518007, b: 0, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0.36078432}
-        key3: {r: 0, g: 0, b: 0, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0}
-        key5: {r: 0, g: 0, b: 0, a: 0}
-        key6: {r: 0, g: 0, b: 0, a: 0}
-        key7: {r: 0, g: 0, b: 0, a: 0}
+        key0: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 0, b: 0, a: 1}
+        key2: {r: 1, g: 0.89144254, b: 0.14117646, a: 0.36078432}
+        key3: {r: 0.31019327, g: 1, b: 0.27843142, a: 0}
+        key4: {r: 0.41176474, g: 1, b: 0.8816291, a: 0}
+        key5: {r: 0, g: 0.10007739, b: 1, a: 0}
+        key6: {r: 0.49497414, g: 0, b: 1, a: 0}
+        key7: {r: 1, g: 0, b: 0.5240264, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
-        ctime3: 0
-        ctime4: 0
-        ctime5: 0
-        ctime6: 0
-        ctime7: 0
+        ctime1: 6554
+        ctime2: 14842
+        ctime3: 23901
+        ctime4: 33153
+        ctime5: 44333
+        ctime6: 53199
+        ctime7: 65535
         atime0: 0
-        atime1: 40285
+        atime1: 65535
         atime2: 65535
         atime3: 0
         atime4: 0
@@ -1392,8 +1392,8 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: 0
-        m_NumColorKeys: 2
-        m_NumAlphaKeys: 3
+        m_NumColorKeys: 8
+        m_NumAlphaKeys: 2
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5044,11 +5044,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe46b7bc2b077c94a80c8def0a4311b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _listOfObj: []
-  _listOfValues: 
-  _objests: []
+  _listOfScripts: []
   _particleSystem: {fileID: 5251011509507351540}
   _fireSize: {fileID: 1123155963362667311}
+  _bSign: 0
 --- !u!114 &2060759001173396428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5063,6 +5062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sign: {fileID: 8880747155866493611, guid: 1898b1147fff8974485f83255ba4d4d5, type: 3}
   _whereToPut: {fileID: 3273728007016383471}
+  _nextScene: 
 --- !u!4 &710236309013886617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7a104bf4d3e572f488f23961325205fb, type: 3}
