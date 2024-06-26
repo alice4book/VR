@@ -565,7 +565,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _burnable: {fileID: 2767684417150058065}
   _XRGrab: {fileID: 4248608435306898858}
-  _canHoldAlways: 1
 --- !u!114 &5485855436204391810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,6 +581,7 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 3637b758ff163493f8bb8b6d7e96d7ae, type: 2}
   burnable: {fileID: 2767684417150058065}
   _holdingController: {fileID: 4519045691794521183}
+  _holdingControllera: {fileID: 0}
   handColor: {r: 1, g: 1, b: 1, a: 1}
   hotColor: {r: 1, g: 0, b: 0, a: 1}
   currentColor: {r: 1, g: 1, b: 1, a: 1}

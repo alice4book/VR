@@ -79,6 +79,9 @@ PrefabInstance:
       addedObject: {fileID: 9139235980563986658}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3d5019bd85d09934898d7ac8dd55315b, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7000490486721490324}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3d5019bd85d09934898d7ac8dd55315b, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5946612170153706486}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3d5019bd85d09934898d7ac8dd55315b, type: 3}
       insertIndex: -1
@@ -140,6 +143,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &7000490486721490324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698417276552650500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
 --- !u!114 &5946612170153706486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,9 +345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d0023550ec5ff74a8892d48c7ca3b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _burnable: {fileID: 0}
-  _XRGrab: {fileID: 0}
-  _canHoldAlways: 1
+  _burnable: {fileID: 5582621211328147123}
+  _XRGrab: {fileID: 5946612170153706486}
+  _canHoldAlways: 0
 --- !u!114 &8745349318676206655
 MonoBehaviour:
   m_ObjectHideFlags: 0
