@@ -12,7 +12,7 @@ public class SpawnSignToNextLevel : MonoBehaviour
     {
         if (_sign != null && _whereToPut != null)
         {
-            var obj = Instantiate(_sign, _whereToPut.position, Quaternion.identity);
+            var obj = Instantiate(_sign, _whereToPut.position, _whereToPut.rotation);
             if(obj != null)
             {
                 if(obj.GetComponent<NextLevelScene>() != null)
