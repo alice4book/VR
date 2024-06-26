@@ -8,11 +8,10 @@ public class HandColor : MonoBehaviour
     private bool isChangingColor = false;
     private bool isHeld = false;
 
-    public float duration = 5.0f; // Duration of the color change
+    public float duration = 2.0f; // Duration of the color change
 
     [SerializeField] private Material material;
     [SerializeField] private Burnable burnable;
-    [SerializeField] private CannotHoldOnFire _holdingController;
     private Color startColor = new Color (1.0f, 1.0f, 1.0f, 1.0f);
     private Color endColor = new Color(1.0f, 0.0f, 0.0f, 1.0f);
 
@@ -22,9 +21,8 @@ public class HandColor : MonoBehaviour
 
     private Coroutine colorChanging; 
 
-    private void Start()
-    {
-        _holdingController = GetComponent<CannotHoldOnFire>();
+    private void Start() 
+    { 
         burnable.OnStartBurning += ChangeColor;
         currentColor = handColor;
     }
@@ -37,8 +35,11 @@ public class HandColor : MonoBehaviour
 
     private void ChangeColor()
     {
-        if (isHeld && burnable._isBurning && !isChangingColor)
+        if (isHeld && burnable._isBurning)
         {
+            if(isChangingColor)
+                StopCoroutine(colorChanging);
+
             isChangingColor = true;
             startColor = currentColor;
             endColor = hotColor;
@@ -48,11 +49,13 @@ public class HandColor : MonoBehaviour
 
     public void RevertColor()
     {
-        StopCoroutine(colorChanging);
+        if (isChangingColor)
+            StopCoroutine(colorChanging);
+
         isChangingColor = true;
         startColor = currentColor;
         endColor = handColor;
-        StartCoroutine(ChangeColorOverTime());
+        colorChanging = StartCoroutine(ChangeColorOverTime());
     }
 
     IEnumerator ChangeColorOverTime()
@@ -72,7 +75,6 @@ public class HandColor : MonoBehaviour
         }
         isChangingColor = false;
         isHeld = false;
-        _holdingController.CannotHold();
         RevertColor();
     }
 }

@@ -1,42 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class CannotHoldOnFire : MonoBehaviour
 {
     [SerializeField] private Burnable _burnable;
-    [SerializeField] private XRGrabInteractable _XRGrab;
-    [SerializeField] private bool _canHoldAlways;
-
-
-    private void OnEnable()
-    {
-        if (_burnable != null)
-        {
-            _burnable.OnStopBurning += CanHold;
-        }
-    }
-
-    private void OnDisable()
-    {
-        if (_burnable != null)
-        {
-            _burnable.OnStopBurning -= CanHold;
-        }
-    }
-
-    private void CanHold()
-    {
-        _XRGrab.enabled = true;
-    }
+    [SerializeField] public XRGrabInteractable _XRGrab;
+    //[SerializeField] private bool _canHoldAlways;
 
     public void CannotHold()
     {
-        if (_canHoldAlways)
-            return;
-        _XRGrab.enabled = false;
-        Invoke("CanHold", 0.2f);
+        CannotHoldForSecond();
     }
 
+    private void CannotHoldForSecond()
+    {
+        XRBaseInteractableExtension.ForceDeselect(_XRGrab);
+
+    }
+
+}
+public static class XRBaseInteractableExtension
+{
+    /// <summary>
+    /// Force deselect the selected interactable.
+    ///
+    /// This is an extension method for <c>XRBaseInteractable</c>.
+    /// </summary>
+    /// <param name="interactable">Interactable that has been selected by some interactor</param>
+    public static void ForceDeselect(this XRBaseInteractable interactable)
+    {
+        interactable.interactionLayers = InteractionLayerMask.GetMask("InertLayer");
+        interactable.interactionManager.CancelInteractableSelection(interactable);
+        Assert.IsFalse(interactable.isSelected);
+    }
 }
