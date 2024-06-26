@@ -27523,6 +27523,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1735060590568230481, guid: 327f3533ea1bdbc458bdaa861ea49e40, type: 3}
+      propertyPath: _listOfTags.Array.data[0]
+      value: Stick
+      objectReference: {fileID: 0}
+    - target: {fileID: 1735060590568230481, guid: 327f3533ea1bdbc458bdaa861ea49e40, type: 3}
       propertyPath: _listOfTags.Array.data[1]
       value: Moss
       objectReference: {fileID: 0}
@@ -27579,6 +27583,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3476020109440721054, guid: 327f3533ea1bdbc458bdaa861ea49e40, type: 3}
+      propertyPath: _listOfTags.Array.data[0]
+      value: Stick
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476020109440721054, guid: 327f3533ea1bdbc458bdaa861ea49e40, type: 3}
       propertyPath: _listOfTags.Array.data[1]
       value: Moss
       objectReference: {fileID: 0}
@@ -27589,6 +27597,10 @@ PrefabInstance:
     - target: {fileID: 3476020109440721054, guid: 327f3533ea1bdbc458bdaa861ea49e40, type: 3}
       propertyPath: _listOfValues.Array.data[1]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161387782556947084, guid: 327f3533ea1bdbc458bdaa861ea49e40, type: 3}
+      propertyPath: _listOfTags.Array.data[0]
+      value: Stick
       objectReference: {fileID: 0}
     - target: {fileID: 4161387782556947084, guid: 327f3533ea1bdbc458bdaa861ea49e40, type: 3}
       propertyPath: _listOfValues.Array.data[0]
@@ -27665,6 +27677,10 @@ PrefabInstance:
     - target: {fileID: 5625183573126296356, guid: 327f3533ea1bdbc458bdaa861ea49e40, type: 3}
       propertyPath: _listOfValues.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625183573126296356, guid: 327f3533ea1bdbc458bdaa861ea49e40, type: 3}
+      propertyPath: _listOfTags.Array.data[0]
+      value: Stick
       objectReference: {fileID: 0}
     - target: {fileID: 5625183573126296356, guid: 327f3533ea1bdbc458bdaa861ea49e40, type: 3}
       propertyPath: _listOfTags.Array.data[1]
