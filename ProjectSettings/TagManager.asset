@@ -12,6 +12,8 @@ TagManager:
   - Stick
   - Food
   - Moss
+  - Match
+  - MatchBox
   layers:
   - Default
   - TransparentFX

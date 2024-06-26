@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class DetectionSphere : MonoBehaviour
 {
     public List<GameObject> _objects = new List<GameObject>();
     public Spawner spawner;
