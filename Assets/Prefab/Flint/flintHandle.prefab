@@ -4934,23 +4934,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93b1f8007f594194686d8fad588a2800, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.054268
+      value: 4.241
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93b1f8007f594194686d8fad588a2800, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8302338
+      value: -1.3281001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93b1f8007f594194686d8fad588a2800, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.443936
+      value: 15.805937
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93b1f8007f594194686d8fad588a2800, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93b1f8007f594194686d8fad588a2800, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93b1f8007f594194686d8fad588a2800, type: 3}
       propertyPath: m_LocalRotation.y
@@ -4958,7 +4958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93b1f8007f594194686d8fad588a2800, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93b1f8007f594194686d8fad588a2800, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5210,8 +5210,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.00022335065, y: 0.0019999996, z: 0.0007446114}
-  m_Center: {x: 0, y: 0, z: 0.00037301157}
+  m_Size: {x: 0.00022335065, y: 0.0019999999, z: 0.0007446119}
+  m_Center: {x: 0, y: -0.00088571024, z: 0.00017098823}
 --- !u!114 &2847901500792985241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5252,7 +5252,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.0001, y: 0.0019999996, z: 0.0002}
-  m_Center: {x: 0, y: 0, z: 0.0007}
+  m_Center: {x: 0, y: -0.0008857102, z: 0.00065}
 --- !u!4 &4253471556281413592 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 93b1f8007f594194686d8fad588a2800, type: 3}
