@@ -37,12 +37,4 @@ public class MatchBoxOpen : MonoBehaviour
         _close = true;
         _animator.SetTrigger("Close");
     }
-
-    private void OnValidate()
-    {
-        if (_open)
-            OpenBox();
-        else if (_close)
-            CloseBox();
-    }
 }

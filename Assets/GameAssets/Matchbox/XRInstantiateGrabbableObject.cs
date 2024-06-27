@@ -20,6 +20,6 @@ public class XRInstantiateGrabbableObject : XRBaseInteractable
         // Select object into same interactor
         interactionManager.SelectEnter(args.interactorObject, objectInteractable);
 
-        //base.OnSelectEntered(args);
+        base.OnSelectEntered(args);
     }
 }
